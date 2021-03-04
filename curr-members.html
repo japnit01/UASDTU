@@ -1,4 +1,260 @@
-<%-include("partials/header")%>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UAS-DTU</title>
+    <link href="/favicon-32x32.png" rel="shortcut icon" type="image/png">
+    <link rel="stylesheet" href="/materialize/css/materialize.css">
+    <script src="/jquery.min.js"></script>
+    <script src="/materialize/js/materialize.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Crete+Round:ital@1&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crete+Round&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tinos&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Karma:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <link href="/aos-master/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="/fullPage.js-master/dist/fullpage.css">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap" rel="stylesheet">
+    <script src="/fullPage.js-master/dist/fullpage.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FKKZ2KYGD0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FKKZ2KYGD0');
+</script>
+</head>
+
+<body>
+  
+<style>
+  .loader{
+    position:fixed;
+    top:0;
+    left:0;
+    z-index: 99;
+    width:100%;
+    height: 100%;
+    background-color: #ebebeb;
+    text-align: center;
+  }
+
+#fp-nav{
+  z-index: 80 !important;
+}
+
+
+@media only screen and (min-width: 600px){
+.loader>img{
+    width: 30vw;
+    margin-top: 25vh;
+    margin-right: 7vw;
+  }
+}
+
+@media only screen and (max-width: 600px){
+.loader>img{
+    width: 60vw;
+    margin-top: 25vh;
+    margin-right: 7vw;
+  }
+}
+
+.hidden{
+animation:fadeOut 1s;
+animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut{
+100%{
+  opacity:0;
+  visibility: hidden;
+}
+}
+
+</style>
+<div class="loader">
+  <img src="/l.png" alt="">
+  <div class="preloader-wrapper active" style="display: block; margin:2vh auto;">
+    <div class="spinner-layer spinner-blue-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  window.addEventListener("load",function(){
+    const loader = document.querySelector(".loader");
+
+    loader.className += " hidden";
+  });
+</script>
+
+
+
+  <script>    
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.sidenav');
+        var instances = M.Sidenav.init(elems,{});
+      });
+    
+    $(document).ready(function(){
+      $('.collapsible').collapsible();
+    });
+  </script>
+  
+  <style>
+    body {
+      font-family: 'Nunito Sans', sans-serif !important; /* common font */
+    }
+    .main-wrapper{
+      position: relative;
+    }
+
+    .menu-holder{
+      position: fixed;
+      z-index: 50;
+    } 
+
+    .sidenav-overlay{
+      z-index: 0;
+    }
+
+    nav {
+      color: white;
+    }
+    @media only screen and (min-width: 993px){
+      nav a.sidenav-trigger {
+      display: block;
+      }
+    }
+    
+    .sidenav {
+      line-height: 1rem;
+    }
+
+    .sidenav li>a{
+        color: white;
+    }
+
+    .sidenav li>a>i.material-icons{
+      color: white;
+    }
+
+
+    ::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+   display: none;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+       display: none;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    display: none;
+  }
+
+.nav-links a {
+  font-family: 'Nunito Sans', sans-serif !important;
+  /* text-shadow: 0 0 10px #000b; */
+  font-size: 15px !important;
+  padding: 22px 0 10px 0 !important;
+  margin: 0 15px !important;
+  line-height: 100%;
+  text-transform: uppercase;
+}
+.nav-wrapper a:hover {
+  background-color: transparent !important;
+}
+
+.un::after {
+content: '';
+width: 0px;
+height: 1.5px;
+display: block;
+background: #fff;
+margin-top: 4px;
+transition: 300ms;
+}
+
+.un:hover::after {
+width: 100%;
+}
+  
+  </style>
+  
+  <div class="main-wrapper">
+    <div class="menu-holder" style="width:100%" id="menu">
+      <nav  class="transparent"  style="height: 4rem; box-shadow: none; background-color: #0004;"> 
+          <!-- navbar content here  --> 
+          <div class="nav-wrapper">
+              <ul class="left">
+                <li><a href="#" class=" sidenav-trigger" data-target="slide_out" style="padding-top: 0rem;"><i class="material-icons" style="font-size:1.5rem;  color: white;">menu</i></a></li>
+              </ul>
+              <ul>
+                <li style="height: 5rem; width: 5rem;"><a href="/" style="height: 5rem; width: 7rem; transform: translate(0, 0.5rem);"><img src="/whitelogo3.png" alt="" style="margin-left: 0; height: 3rem;"></a></li>
+              </ul>
+              <ul class="hide-on-med-and-down right nav-links" style="padding-right: 12rem;">
+                <li><a href="/solutions" class="un">Solutions</a></li>
+                <li><a href="/systems" class="un">Hangar</a></li>
+                <li><a href="/upcoming-projects" class="un">Upcoming Projects</a></li>
+                <li><a href="/contact" class="un">Contact Us</a></li>
+              </ul>
+          </div>
+      </nav>
+
+      <ul class="sidenav #000000 black" style="color:#eeeeee;" id="slide_out">
+        <!-- <li><a class="sidenav-close" href="#!"><i class="material-icons" style="font-size:2rem;">menu</i></a></li> -->
+        <li><a href="/" style="width:100%; height: 100%;"><img src="/whitelogo2.png" alt="" style="transform:scale(2); width:100%; height: 100%; margin-top: 36px;"></a></li>
+        <hr style="margin: 1rem 2.5rem 1rem 2rem;">
+        <li><a href="/" class="active hide-on-med-and-up"><i class="material-icons">home</i> Home</a></li>
+        <li><a href="/about-us"><i class="material-icons">info</i> About Us</a></li>
+        <li><a href="/systems"><i class="material-icons">airplanemode_active</i> Hangar</a></li>
+        <li>
+          <ul class="collapsible" style="padding-left: 1rem;">
+          <li>
+            <div class="collapsible-header"><i class="material-icons" style="margin-right: 1.8rem;">group</i> <b>Team</b></div>
+            <div class="collapsible-body"> 
+              <ul  style="background: black; padding-left: 4rem;">
+                  <li><a href="/mentors">Mentors</a></li>
+                  <li><a href="/curr-members">Current Members</a></li>
+                  <li><a href="/past-members">Past Members</a></li>
+              </ul>
+            </div>
+          </li>
+          </ul>
+        </li>
+        <li><a href="/achievements"><i class="material-icons">emoji_events</i> Achievements</a></li>
+        <li><a href="/upcoming_events" class="active"><i class="material-icons">home</i> Upcoming Events</a></li>
+        <li><a href="/upcoming-projects" class="active"><i class="material-icons">precision_manufacturing</i> Upcoming Projects</a></li>
+        <li><a href="/solutions" class="active"><i class="material-icons">settings</i> Solutions</a></li>
+        <li><a href="/contact"><i class="material-icons">email</i> Contact Us</a></li>
+      </ul>
+    </div>  
+
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 <style>
@@ -45,14 +301,14 @@
     h3.center {
         text-align: center;
     }
-    .fa-linkedin, .fa-envelope {
+    .blued, .fa-envelope {
         font-size: 18px;
         margin-right: 4px;
     }
     .fa-google {
         color: red;
     }
-    .fa-linkedin {
+    .blued {
         color: #08f;
     }
     @media only screen and (max-width: 600px) {
@@ -67,145 +323,649 @@
 
 <div class="main">
     <div class="outer">
-        <% members["4-yrs"].map(m => { %>
+        
         <div class="box1" style="width: 23%; min-width: 200px; margin: 80px 30px 30px 30px;">
             <div class="ctn" style="transform: translateY(-20%);">
-                <img src="/curr-members/<%= m.img %>" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
-                <div style="padding-top: 10px; color: #777;"><%= m.rank %></div>
-                <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin: 4px 0 17px 0;"><%= m.name %></p>
+                <img src="/curr-members/aniketgupta.jpg" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+                <div style="padding-top: 10px; color: #777;">Project Manager</div>
+                <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin: 4px 0 17px 0;">Aniket Gupta</p>
                 <div>
-                    <% if(m.lkdn) { %>
-                    <a href="<%= m.lkdn %>" target="blank"><i class="fab fa-linkedin"></i></i></a>                
-                    <% } %>
-                    <% if(m.mail) { %>    
-                    <a href="mailto:<%= m.mail %>" target="blank"><i class="fab fa-google"></i></i></a>
-                    <% } %>
+                    
+                    <a href="http://www.linkedin.com/in/aniket-gupta-1490bb165" target="blank"><i class="fab fa-linkedin blued"></i></i></a>                
+                    
+                        
+                    <a href="mailto:aniket.tcdav@gmail.com" target="blank"><i class="fab fa-google"></i></i></a>
+                    
                 </div>
             </div>
         </div>
-        <% }) %>
+        
+        <div class="box1" style="width: 23%; min-width: 200px; margin: 80px 30px 30px 30px;">
+            <div class="ctn" style="transform: translateY(-20%);">
+                <img src="/curr-members/joyraj.jpg" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+                <div style="padding-top: 10px; color: #777;">Student Advisor</div>
+                <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin: 4px 0 17px 0;">Joyraj Bhowmick</p>
+                <div>
+                    
+                    <a href="https://www.linkedin.com/in/joyraj-bhowmick-2703a8158" target="blank"><i class="fab fa-linkedin blued"></i></i></a>                
+                    
+                        
+                    <a href="mailto:joyrajbhowmick1998@gmail.com" target="blank"><i class="fab fa-google"></i></i></a>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="box1" style="width: 23%; min-width: 200px; margin: 80px 30px 30px 30px;">
+            <div class="ctn" style="transform: translateY(-20%);">
+                <img src="/curr-members/saurav sir.jpg" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+                <div style="padding-top: 10px; color: #777;">Student Advisor</div>
+                <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin: 4px 0 17px 0;">Saurav Ahlawat</p>
+                <div>
+                    
+                    <a href="https://www.linkedin.com/in/sauravahlawat" target="blank"><i class="fab fa-linkedin blued"></i></i></a>                
+                    
+                        
+                    <a href="mailto:sauravahlawat2000@gmail.com" target="blank"><i class="fab fa-google"></i></i></a>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="box1" style="width: 23%; min-width: 200px; margin: 80px 30px 30px 30px;">
+            <div class="ctn" style="transform: translateY(-20%);">
+                <img src="/curr-members/anurag.jpg" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+                <div style="padding-top: 10px; color: #777;">Student Advisor</div>
+                <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin: 4px 0 17px 0;">Anurag Singh</p>
+                <div>
+                    
+                    <a href="https://www.linkedin.com/in/anurag-singh-81a56114b" target="blank"><i class="fab fa-linkedin blued"></i></i></a>                
+                    
+                        
+                    <a href="mailto:anuragsingh5298016@gmail.com" target="blank"><i class="fab fa-google"></i></i></a>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="box1" style="width: 23%; min-width: 200px; margin: 80px 30px 30px 30px;">
+            <div class="ctn" style="transform: translateY(-20%);">
+                <img src="/curr-members/parth.jpg" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+                <div style="padding-top: 10px; color: #777;">Student Advisor</div>
+                <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin: 4px 0 17px 0;">Parth Mahajan</p>
+                <div>
+                    
+                    <a href="https://www.linkedin.com/in/parth-mahajan-6118705b" target="blank"><i class="fab fa-linkedin blued"></i></i></a>                
+                    
+                        
+                    <a href="mailto:mahajanparth0@gmail.com" target="blank"><i class="fab fa-google"></i></i></a>
+                    
+                </div>
+            </div>
+        </div>
+        
     </div>
 
     <h3 class="center">Executive Positions</h3>
 
     <div class="outer">
-        <% members["3-yrs"].map(m => { %>
+        
         <div class="box2 hide-on-small-only" style="width: 40%; min-width: 400px;">
-            <img src="/curr-members/<%= m.img %>" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+            <img src="/curr-members/aman sir.jpg" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
             <div>
-                <span style="font-size: 17px; color: #777;"><%= m.rank %></span><br>
-                <span style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin: 4px 0 17px 0; display: inline-block;"><%= m.name %></span><br>
-                <% if(m.lkdn) { %>
-                <a href="<%= m.lkdn %>" target="blank"><i class="fab fa-linkedin"></i></i></a>
-                <% } %>
-                <% if(m.mail) { %>
-                <a href="mailto:<%= m.mail %>" target="blank"><i class="fab fa-google"></i></i></a>
-                <% } %>
+                <span style="font-size: 17px; color: #777;">Team Captain</span><br>
+                <span style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin: 4px 0 17px 0; display: inline-block;">Aman Virmani</span><br>
+                
+                
+                <a href="mailto:virmaniaman712000712000@gmail.com" target="blank"><i class="fab fa-google"></i></i></a>
+                
             </div>
         </div>
         
         <div class="box1 show-on-small" style="width: 23%; min-width: 200px; margin: 80px 30px 30px 30px;display: none;">
             <div class="ctn" style="transform: translateY(-20%);">
-                <img src="/curr-members/<%= m.img %>" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
-                <div style="padding-top: 10px; color: #777;"><%= m.rank %></div>
-                <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin: 4px 0 17px 0;"><%= m.name %></p>
+                <img src="/curr-members/aman sir.jpg" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+                <div style="padding-top: 10px; color: #777;">Team Captain</div>
+                <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin: 4px 0 17px 0;">Aman Virmani</p>
                 <div>
-                    <% if(m.lkdn) { %>
-                    <a href="<%= m.lkdn %>" target="blank"><i class="fab fa-linkedin"></i></i></a>                
-                    <% } %>
-                    <% if(m.mail) { %>    
-                    <a href="mailto:<%= m.mail %>" target="blank"><i class="fab fa-google"></i></i></a>
-                    <% } %>
+                    
+                        
+                    <a href="mailto:virmaniaman712000712000@gmail.com" target="blank"><i class="fab fa-google"></i></i></a>
+                    
                 </div>
             </div>
         </div>
-        <% }) %>
+        
+        <div class="box2 hide-on-small-only" style="width: 40%; min-width: 400px;">
+            <img src="/curr-members/tushant sir.jpg" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+            <div>
+                <span style="font-size: 17px; color: #777;">Vice Captain</span><br>
+                <span style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin: 4px 0 17px 0; display: inline-block;">Tushant Yadav</span><br>
+                
+                <a href="https://www.linkedin.com/in/tushant-yadav/" target="blank"><i class="fab fa-linkedin blued"></i></i></a>
+                
+                
+                <a href="mailto:tushanty000@gmail.com" target="blank"><i class="fab fa-google"></i></i></a>
+                
+            </div>
+        </div>
+        
+        <div class="box1 show-on-small" style="width: 23%; min-width: 200px; margin: 80px 30px 30px 30px;display: none;">
+            <div class="ctn" style="transform: translateY(-20%);">
+                <img src="/curr-members/tushant sir.jpg" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+                <div style="padding-top: 10px; color: #777;">Vice Captain</div>
+                <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin: 4px 0 17px 0;">Tushant Yadav</p>
+                <div>
+                    
+                    <a href="https://www.linkedin.com/in/tushant-yadav/" target="blank"><i class="fab fa-linkedin blued"></i></i></a>                
+                    
+                        
+                    <a href="mailto:tushanty000@gmail.com" target="blank"><i class="fab fa-google"></i></i></a>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="box2 hide-on-small-only" style="width: 40%; min-width: 400px;">
+            <img src="/curr-members/nitin.jpg" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+            <div>
+                <span style="font-size: 17px; color: #777;">Airframes Head</span><br>
+                <span style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin: 4px 0 17px 0; display: inline-block;">Nitin Sharma</span><br>
+                
+                <a href="https://www.linkedin.com/in/nitin-sharma81464817a/" target="blank"><i class="fab fa-linkedin blued"></i></i></a>
+                
+                
+                <a href="mailto:nitin571999@gmail.com" target="blank"><i class="fab fa-google"></i></i></a>
+                
+            </div>
+        </div>
+        
+        <div class="box1 show-on-small" style="width: 23%; min-width: 200px; margin: 80px 30px 30px 30px;display: none;">
+            <div class="ctn" style="transform: translateY(-20%);">
+                <img src="/curr-members/nitin.jpg" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+                <div style="padding-top: 10px; color: #777;">Airframes Head</div>
+                <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin: 4px 0 17px 0;">Nitin Sharma</p>
+                <div>
+                    
+                    <a href="https://www.linkedin.com/in/nitin-sharma81464817a/" target="blank"><i class="fab fa-linkedin blued"></i></i></a>                
+                    
+                        
+                    <a href="mailto:nitin571999@gmail.com" target="blank"><i class="fab fa-google"></i></i></a>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="box2 hide-on-small-only" style="width: 40%; min-width: 400px;">
+            <img src="/curr-members/nishu.jpg" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+            <div>
+                <span style="font-size: 17px; color: #777;">Avionics Head</span><br>
+                <span style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin: 4px 0 17px 0; display: inline-block;">Nishkarsh Sharma</span><br>
+                
+                <a href="https://www.linkedin.com/in/nishkarsh-sharma-7b9b5616b" target="blank"><i class="fab fa-linkedin blued"></i></i></a>
+                
+                
+                <a href="mailto:nishkarshsharma16@gmail.com" target="blank"><i class="fab fa-google"></i></i></a>
+                
+            </div>
+        </div>
+        
+        <div class="box1 show-on-small" style="width: 23%; min-width: 200px; margin: 80px 30px 30px 30px;display: none;">
+            <div class="ctn" style="transform: translateY(-20%);">
+                <img src="/curr-members/nishu.jpg" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+                <div style="padding-top: 10px; color: #777;">Avionics Head</div>
+                <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin: 4px 0 17px 0;">Nishkarsh Sharma</p>
+                <div>
+                    
+                    <a href="https://www.linkedin.com/in/nishkarsh-sharma-7b9b5616b" target="blank"><i class="fab fa-linkedin blued"></i></i></a>                
+                    
+                        
+                    <a href="mailto:nishkarshsharma16@gmail.com" target="blank"><i class="fab fa-google"></i></i></a>
+                    
+                </div>
+            </div>
+        </div>
+        
     </div>
 
     <h3 class="center">Software Technicians</h3>
 
     <div class="outer">
-        <% members["software"].map(m => { %>
+        
         <div class="box1" style="width: 20%; min-width: 180px; padding: 0 20px;">
             <div class="ctn" style="transform: translateY(-20%);">
-                 <img src="/curr-members/<%= m.img %>" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
-                <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin-bottom: 10px;"><%= m.name %></p>
+                 <img src="/curr-members/japnit sir.jpeg" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+                <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin-bottom: 10px;">Japnit Singh</p>
                 <div>
-                    <% if(m.lkdn) { %>
-                    <a href="<%= m.lkdn %>" target="blank"><i class="fab fa-linkedin"></i></i></a>                
-                    <% } %>
-                    <% if(m.mail) { %>    
-                    <a href="mailto:<%= m.mail %>" target="blank"><i class="fab fa-google"></i></i></a>
-                    <% } %>
+                    
+                    <a href="https://www.linkedin.com/in/japnit-singh-1500561ab/" target="blank"><i class="fab fa-linkedin blued"></i></i></a>                
+                    
+                        
+                    <a href="mailto:japnit2012@gmail.com" target="blank"><i class="fab fa-google"></i></i></a>
+                    
                 </div>
             </div>
         </div>
-        <% }) %>
+        
+        <div class="box1" style="width: 20%; min-width: 180px; padding: 0 20px;">
+            <div class="ctn" style="transform: translateY(-20%);">
+                 <img src="/curr-members/harshitsir.jpg" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+                <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin-bottom: 10px;">Harshit Gupta</p>
+                <div>
+                    
+                    <a href="www.linkedin.com/in/harshit-gupta-22a411198" target="blank"><i class="fab fa-linkedin blued"></i></i></a>                
+                    
+                        
+                    <a href="mailto:harshit.barya401@outlook.com" target="blank"><i class="fab fa-google"></i></i></a>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="box1" style="width: 20%; min-width: 180px; padding: 0 20px;">
+            <div class="ctn" style="transform: translateY(-20%);">
+                 <img src="/curr-members/ananya singh.jpg" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+                <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin-bottom: 10px;">Ananya Komal Singh</p>
+                <div>
+                    
+                    <a href="https://www.linkedin.com/in/ananya-singh-856109187" target="blank"><i class="fab fa-linkedin blued"></i></i></a>                
+                    
+                        
+                    <a href="mailto:ananyaksingh11@gmail.com" target="blank"><i class="fab fa-google"></i></i></a>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="box1" style="width: 20%; min-width: 180px; padding: 0 20px;">
+            <div class="ctn" style="transform: translateY(-20%);">
+                 <img src="/curr-members/pankaj sir.jpeg" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+                <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin-bottom: 10px;">Pankaj</p>
+                <div>
+                    
+                    <a href="https://www.linkedin.com/in/pankaj-rajput-6551b61a0/" target="blank"><i class="fab fa-linkedin blued"></i></i></a>                
+                    
+                        
+                    <a href="mailto:pankajrajput020010@gmail.com" target="blank"><i class="fab fa-google"></i></i></a>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="box1" style="width: 20%; min-width: 180px; padding: 0 20px;">
+            <div class="ctn" style="transform: translateY(-20%);">
+                 <img src="/curr-members/anunay.jpg" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+                <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin-bottom: 10px;">Anunay</p>
+                <div>
+                    
+                    <a href="https://www.linkedin.com/in/anunay-varshney-1b3515193" target="blank"><i class="fab fa-linkedin blued"></i></i></a>                
+                    
+                        
+                    <a href="mailto:anunay2608@gmail.com" target="blank"><i class="fab fa-google"></i></i></a>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="box1" style="width: 20%; min-width: 180px; padding: 0 20px;">
+            <div class="ctn" style="transform: translateY(-20%);">
+                 <img src="/curr-members/rahul.jpg" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+                <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin-bottom: 10px;">Rahul Verma</p>
+                <div>
+                    
+                    <a href="https://in.linkedin.com/in/vrintle" target="blank"><i class="fab fa-linkedin blued"></i></i></a>                
+                    
+                        
+                    <a href="mailto:vrintle@gmail.com" target="blank"><i class="fab fa-google"></i></i></a>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="box1" style="width: 20%; min-width: 180px; padding: 0 20px;">
+            <div class="ctn" style="transform: translateY(-20%);">
+                 <img src="/curr-members/harshit nahat.jpg" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+                <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin-bottom: 10px;">Harshit Nahata</p>
+                <div>
+                    
+                    <a href="https://www.linkedin.com/in/sandeep-swain-a64a1a1b8" target="blank"><i class="fab fa-linkedin blued"></i></i></a>                
+                    
+                        
+                    <a href="mailto:harshitnahata48@gmail.com" target="blank"><i class="fab fa-google"></i></i></a>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="box1" style="width: 20%; min-width: 180px; padding: 0 20px;">
+            <div class="ctn" style="transform: translateY(-20%);">
+                 <img src="/curr-members/nilesh.jpg" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+                <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin-bottom: 10px;">Nilesh Aggarwal</p>
+                <div>
+                    
+                    <a href="https://www.linkedin.com/mwlite/in/nilesh-aggarwal-a96304180" target="blank"><i class="fab fa-linkedin blued"></i></i></a>                
+                    
+                        
+                    <a href="mailto:nilesh.ggoo@gmail.com" target="blank"><i class="fab fa-google"></i></i></a>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="box1" style="width: 20%; min-width: 180px; padding: 0 20px;">
+            <div class="ctn" style="transform: translateY(-20%);">
+                 <img src="/curr-members/sandeep swain.jpg" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+                <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin-bottom: 10px;">Sandeep Swain</p>
+                <div>
+                    
+                    <a href="https://www.linkedin.com/in/sandeep-swain-a64a1a1b8" target="blank"><i class="fab fa-linkedin blued"></i></i></a>                
+                    
+                        
+                    <a href="mailto:sandeepswain001@gmail.com" target="blank"><i class="fab fa-google"></i></i></a>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="box1" style="width: 20%; min-width: 180px; padding: 0 20px;">
+            <div class="ctn" style="transform: translateY(-20%);">
+                 <img src="/curr-members/arpan-gark.jpg" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+                <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin-bottom: 10px;">Arpan Garg</p>
+                <div>
+                    
+                    <a href="https://www.linkedin.com/in/arpan-garg-b885901b0" target="blank"><i class="fab fa-linkedin blued"></i></i></a>                
+                    
+                        
+                    <a href="mailto:arpangarg11111@gmail.com" target="blank"><i class="fab fa-google"></i></i></a>
+                    
+                </div>
+            </div>
+        </div>
+        
     </div>
 
     <h3 class="center">Avionics Technicians</h3>
 
     <div class="outer">
-        <% members["avionics"].map(m => { %>
+        
             <div class="box1" style="width: 20%; min-width: 180px; padding: 0 20px;">
                 <div class="ctn" style="transform: translateY(-20%);">
-                    <img src="/curr-members/<%= m.img %>" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
-                    <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin-bottom: 10px;"><%= m.name %></p>
+                    <img src="/curr-members/saransh.jpeg" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+                    <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin-bottom: 10px;">Saransh Agarwal</p>
                     <div>
-                        <% if(m.lkdn) { %>
-                        <a href="<%= m.lkdn %>" target="blank"><i class="fab fa-linkedin"></i></i></a>                
-                        <% } %>
-                        <% if(m.mail) { %>    
-                        <a href="mailto:<%= m.mail %>" target="blank"><i class="fab fa-google"></i></i></a>
-                        <% } %>
+                        
+                        <a href="https://www.linkedin.com/in/saransh--agarwal/" target="blank"><i class="fab fa-linkedin blued"></i></i></a>                
+                        
+                            
+                        <a href="mailto:saranshcool.1206@gmail.com" target="blank"><i class="fab fa-google"></i></i></a>
+                        
                     </div>
                 </div>
             </div>
-            <% }) %>
+            
+            <div class="box1" style="width: 20%; min-width: 180px; padding: 0 20px;">
+                <div class="ctn" style="transform: translateY(-20%);">
+                    <img src="/curr-members/tushar sor.jpeg" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+                    <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin-bottom: 10px;">Tushar Singh</p>
+                    <div>
+                        
+                        <a href="https://www.linkedin.com/in/tushar-singh-5a2b08193" target="blank"><i class="fab fa-linkedin blued"></i></i></a>                
+                        
+                            
+                        <a href="mailto:tushar300101@gmail.com" target="blank"><i class="fab fa-google"></i></i></a>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="box1" style="width: 20%; min-width: 180px; padding: 0 20px;">
+                <div class="ctn" style="transform: translateY(-20%);">
+                    <img src="/curr-members/priyanshi maam.jpg" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+                    <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin-bottom: 10px;">Priyanshi Jain</p>
+                    <div>
+                        
+                        <a href="https://www.linkedin.com/in/priyanshi-jain-1505aa1a7" target="blank"><i class="fab fa-linkedin blued"></i></i></a>                
+                        
+                            
+                        <a href="mailto:priyanshijain1610@gmail.com" target="blank"><i class="fab fa-google"></i></i></a>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="box1" style="width: 20%; min-width: 180px; padding: 0 20px;">
+                <div class="ctn" style="transform: translateY(-20%);">
+                    <img src="/curr-members/kartikey sir.jpg" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+                    <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin-bottom: 10px;">Kartikey Aggarwal</p>
+                    <div>
+                        
+                            
+                        <a href="mailto:aggkartikey@gmail.com" target="blank"><i class="fab fa-google"></i></i></a>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="box1" style="width: 20%; min-width: 180px; padding: 0 20px;">
+                <div class="ctn" style="transform: translateY(-20%);">
+                    <img src="/curr-members/atiraj.jpeg" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+                    <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin-bottom: 10px;">Atiraj Anand</p>
+                    <div>
+                        
+                        <a href="https://www.linkedin.com/in/atiraj-anand-2079711b7" target="blank"><i class="fab fa-linkedin blued"></i></i></a>                
+                        
+                            
+                        <a href="mailto:anandatiraj@gmail.com" target="blank"><i class="fab fa-google"></i></i></a>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="box1" style="width: 20%; min-width: 180px; padding: 0 20px;">
+                <div class="ctn" style="transform: translateY(-20%);">
+                    <img src="/curr-members/vayu.jpg" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+                    <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin-bottom: 10px;">Vayam jain</p>
+                    <div>
+                        
+                        <a href="https://www.linkedin.com/in/vayam-jain-1aa35612b" target="blank"><i class="fab fa-linkedin blued"></i></i></a>                
+                        
+                            
+                        <a href="mailto:jainvayam@gmail.com" target="blank"><i class="fab fa-google"></i></i></a>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="box1" style="width: 20%; min-width: 180px; padding: 0 20px;">
+                <div class="ctn" style="transform: translateY(-20%);">
+                    <img src="/curr-members/abhishek gupta.jpg" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+                    <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin-bottom: 10px;">Abhishek Gupta</p>
+                    <div>
+                        
+                        <a href="https://www.linkedin.com/in/abhishek-gupta-099288175" target="blank"><i class="fab fa-linkedin blued"></i></i></a>                
+                        
+                            
+                        <a href="mailto:abhishekgupta23810306@gmail.com" target="blank"><i class="fab fa-google"></i></i></a>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="box1" style="width: 20%; min-width: 180px; padding: 0 20px;">
+                <div class="ctn" style="transform: translateY(-20%);">
+                    <img src="/curr-members/rithwick.jpg" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+                    <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin-bottom: 10px;">Rithwick Sethi</p>
+                    <div>
+                        
+                            
+                        <a href="mailto:rithwick11111@gmail.com" target="blank"><i class="fab fa-google"></i></i></a>
+                        
+                    </div>
+                </div>
+            </div>
+            
     </div>
 
     
     <h3 class="center">Airframe Technicians</h3>
 
     <div class="outer">
-        <% members["airframe"].map(m => { %>
+        
             <div class="box1" style="width: 20%; min-width: 180px; padding: 0 20px;">
                 <div class="ctn" style="transform: translateY(-20%);">
-                    <img src="/curr-members/<%= m.img %>" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
-                    <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin-bottom: 10px;"><%= m.name %></p>
+                    <img src="/curr-members/subho sir.jpg" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+                    <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin-bottom: 10px;">Shubhodeep Shiv Aditya</p>
                     <div>
-                        <% if(m.lkdn) { %>
-                        <a href="<%= m.lkdn %>" target="blank"><i class="fab fa-linkedin"></i></i></a>                
-                        <% } %>
-                        <% if(m.mail) { %>    
-                        <a href="mailto:<%= m.mail %>" target="blank"><i class="fab fa-google"></i></i></a>
-                        <% } %>
+                        
+                        <a href="https://www.linkedin.com/in/shubhodeepaditya" target="blank"><i class="fab fa-linkedin blued"></i></i></a>                
+                        
+                            
+                        <a href="mailto:shubhoaditya2212@gmail.com" target="blank"><i class="fab fa-google"></i></i></a>
+                        
                     </div>
                 </div>
             </div>
-            <% }) %>
+            
+            <div class="box1" style="width: 20%; min-width: 180px; padding: 0 20px;">
+                <div class="ctn" style="transform: translateY(-20%);">
+                    <img src="/curr-members/anand.jpg" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+                    <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin-bottom: 10px;">Anand Mohan Singh</p>
+                    <div>
+                        
+                        <a href="https://www.linkedin.com/in/anand-singh-719a421a6" target="blank"><i class="fab fa-linkedin blued"></i></i></a>                
+                        
+                            
+                        <a href="mailto:anandsingh16898@gmail.com" target="blank"><i class="fab fa-google"></i></i></a>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="box1" style="width: 20%; min-width: 180px; padding: 0 20px;">
+                <div class="ctn" style="transform: translateY(-20%);">
+                    <img src="/curr-members/abhishek-prajapati.jpg" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+                    <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin-bottom: 10px;">Abhishek Prajapati</p>
+                    <div>
+                        
+                        <a href="https://www.linkedin.com/in/abhishek-prajapati-9a11581aa" target="blank"><i class="fab fa-linkedin blued"></i></i></a>                
+                        
+                            
+                        <a href="mailto:abhishekprajapati704@gmail.com" target="blank"><i class="fab fa-google"></i></i></a>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="box1" style="width: 20%; min-width: 180px; padding: 0 20px;">
+                <div class="ctn" style="transform: translateY(-20%);">
+                    <img src="/curr-members/Sampreet Bharali.jpg" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+                    <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin-bottom: 10px;">Sampreet Bharali</p>
+                    <div>
+                        
+                        <a href="https://www.linkedin.com/in/sampreet-bharali-5b71a81a0" target="blank"><i class="fab fa-linkedin blued"></i></i></a>                
+                        
+                            
+                        <a href="mailto:sampreetbharali@gmail.com" target="blank"><i class="fab fa-google"></i></i></a>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="box1" style="width: 20%; min-width: 180px; padding: 0 20px;">
+                <div class="ctn" style="transform: translateY(-20%);">
+                    <img src="/curr-members/sarthak.jpeg" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+                    <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin-bottom: 10px;">Sarthak Sinha</p>
+                    <div>
+                        
+                        <a href="https://www.linkedin.com/in/sarthak-sinha-3458931b8" target="blank"><i class="fab fa-linkedin blued"></i></i></a>                
+                        
+                            
+                        <a href="mailto:sinha.sarthak9818@gmail.com" target="blank"><i class="fab fa-google"></i></i></a>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="box1" style="width: 20%; min-width: 180px; padding: 0 20px;">
+                <div class="ctn" style="transform: translateY(-20%);">
+                    <img src="/curr-members/astik.jpg" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+                    <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin-bottom: 10px;">Astik Srivastava </p>
+                    <div>
+                        
+                        <a href="https://www.linkedin.com/in/astik-srivastava-80746a205" target="blank"><i class="fab fa-linkedin blued"></i></i></a>                
+                        
+                            
+                        <a href="mailto:41.astiksrivastava@gmail.com" target="blank"><i class="fab fa-google"></i></i></a>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="box1" style="width: 20%; min-width: 180px; padding: 0 20px;">
+                <div class="ctn" style="transform: translateY(-20%);">
+                    <img src="/curr-members/aryan chaudhary.jpg" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+                    <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin-bottom: 10px;">Aryan Chaudhary</p>
+                    <div>
+                        
+                            
+                        <a href="mailto:aryanchaudhary8608@gmail.com" target="blank"><i class="fab fa-google"></i></i></a>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="box1" style="width: 20%; min-width: 180px; padding: 0 20px;">
+                <div class="ctn" style="transform: translateY(-20%);">
+                    <img src="/curr-members/armaan.jpg" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+                    <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin-bottom: 10px;">Armaan Kumar</p>
+                    <div>
+                        
+                        <a href="https://www.linkedin.com/in/armaan-armaan-6ab951205" target="blank"><i class="fab fa-linkedin blued"></i></i></a>                
+                        
+                            
+                        <a href="mailto:armaan.naman@gmail.com" target="blank"><i class="fab fa-google"></i></i></a>
+                        
+                    </div>
+                </div>
+            </div>
+            
     </div>
 
     
     <h3 class="center">Corporate</h3>
 
     <div class="outer">
-        <% members["corporate"].map(m => { %>
+        
             <div class="box1" style="width: 20%; min-width: 180px; padding: 0 20px;">
                 <div class="ctn" style="transform: translateY(-20%);">
-                    <img src="/curr-members/<%= m.img %>" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
-                    <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin-bottom: 10px;"><%= m.name %></p>
+                    <img src="/curr-members/avyay.jpg" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+                    <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin-bottom: 10px;">Avyay Gupta</p>
                     <div>
-                        <% if(m.lkdn) { %>
-                        <a href="<%= m.lkdn %>" target="blank"><i class="fab fa-linkedin"></i></i></a>                
-                        <% } %>
-                        <% if(m.mail) { %>    
-                        <a href="mailto:<%= m.mail %>" target="blank"><i class="fab fa-google"></i></i></a>
-                        <% } %>
+                        
+                        <a href="https://www.linkedin.com/in/avyay-gupta-a9a67a201" target="blank"><i class="fab fa-linkedin blued"></i></i></a>                
+                        
+                            
+                        <a href="mailto:avyay007@gmail.com" target="blank"><i class="fab fa-google"></i></i></a>
+                        
                     </div>
                 </div>
             </div>
-            <% }) %>
+            
+            <div class="box1" style="width: 20%; min-width: 180px; padding: 0 20px;">
+                <div class="ctn" style="transform: translateY(-20%);">
+                    <img src="/curr-members/aadhya roy.jpeg" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+                    <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin-bottom: 10px;">Aadhya Roy</p>
+                    <div>
+                        
+                        <a href="https://www.linkedin.com/in/aadhya-roy-442b04204" target="blank"><i class="fab fa-linkedin blued"></i></i></a>                
+                        
+                            
+                        <a href="mailto:aadhyaroy2002@gmail.com" target="blank"><i class="fab fa-google"></i></i></a>
+                        
+                    </div>
+                </div>
+            </div>
+            
     </div>
 </div>
 
@@ -219,4 +979,66 @@
     document.title = "Current Members • UAS-DTU";
 </script>
 
-<%-include("partials/footer")%>
+<section id="footer">
+<style>
+    .logos a>i{
+        padding-right: 0.4rem;
+    }
+    #contact .col{
+        padding-right: 2rem;
+        color:#cccccc;
+    }
+    #contact .map{
+        text-align: left;
+    }
+
+    #contact .row{
+        margin-bottom: 0;
+    }
+    .logos a{
+         color:grey
+    }
+
+     @media only screen and (min-width:800px){
+        .row #g_map{
+        padding-left: 3vw; 
+        padding-right: 3vw;
+   }
+     }    
+</style>
+<div id="contact" style="padding: 0 4rem 0 4rem; background:black; position: relative;">
+    <div class="row">
+                <div class="col l3 m12 s12">
+                    <h4 style="white-space: nowrap;">UAS-DTU</h4>
+                    <p class="text">A team of enthusiastic undergraduates, working to providing the solutions for urban surveillance needs. </p>
+                        <div class="logos">
+                            <a href="https://www.facebook.com/uas.dtu/" target="blank"><i class="fab fa-facebook-square fa-2x"></i></a>
+                            <a href="https://in.linkedin.com/company/uas-dtu" target="blank"><i class="fab fa-linkedin fa-2x"></i></i></a>
+                            <a href="https://www.youtube.com/channel/UCmOV4uiBHoHzf5ZrE1z6WQg" target="blank"><i class="fab fa-youtube fa-2x"></i></a>
+                            <a href="https://www.instagram.com/uasdtu/" target="blank"><i class="fab fa-instagram fa-2x"></i></i></a>
+                        </div>
+                </div>
+               
+                <div class="col l6 m12 s12" id="g_map">
+                    <h4 class="map">Map help:</h4>
+                    <div style="overflow: hidden;">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3498.027403024808!2d77.11499645105123!3d28.748598782285452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d01270184b37d%3A0x31d84edc5468f356!2sUAS+DTU!5e0!3m2!1sen!2sin!4v1516991611933" frameborder="0" style="border:0; width:35rem;height:10.5rem;" ></iframe>
+                    </div>
+                        
+                </div>
+                 
+                <div class="col l3 m12 s12">
+                    <h4>Reach us at:</h4>
+                    <p class="text">LW2FF1, Delhi Technological University, Delhi - 110042</p>
+                    <p id="phone1"><i class="fas fa-phone-alt"></i> +91-8800712060</p>
+                    <p><i class="fas fa-phone-alt"></i> +91-9873106343</p>
+                    <p><i class="fas fa-envelope"></i> uas.dce@gmail.com</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    </section>    
+</div>
+</body>
+</html>
