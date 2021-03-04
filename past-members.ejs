@@ -1,0 +1,136 @@
+<%-include("partials/header")%>
+
+<style>
+    nav.transparent {
+        position: fixed !important;
+        top: 0;
+        background-color: #000000 !important;
+    }
+    .inner {
+        display: flex;
+        display: -moz-flex;
+        display: -webkit-flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding-left: 7vw;
+    }
+    .box1 {
+        width: 25%;
+        min-width: 200px;
+        flex-shrink: 1;
+        text-align: center;
+        margin: 50px 30px;
+        box-sizing: border-box;
+        background-color: #ffffff;
+        border-radius: 0 0 10px 10px;
+    }
+    .sidebar a{
+        display:block;
+        color: white;
+        font-family: 'Crete Round', serif;
+        cursor: pointer;
+        padding: 13px 0;
+        box-sizing: border-box;
+    }
+    .sidebar {
+        background-color: #444;
+        position:fixed;
+        top:4rem;
+        left:0;
+        bottom:0;
+        text-align: center;
+        width: 7vw;
+    }
+    #contact {
+        z-index: 1;
+    }
+    .selected_yr {
+        border-bottom: 3px solid white;
+    }
+    
+    @media only screen and (max-width: 993px) {
+        .years h3 {
+            font-size: 30px;
+            margin-left: 10vw;
+        }
+        .years {
+            margin-left: 10vw;
+        }
+        .sidebar {
+            width: 20vw;
+        }
+    }
+</style>
+
+<div class="main" style="background-color: #eeeeee; padding: 40px;">
+    <div class="outer">
+        <div class="sidebar">
+            <a>2020</a>
+            <a>2019</a>
+            <a>2018</a>
+            <a>2017</a>
+            <a>2016</a>
+            <a>2015</a>
+            <a>2014</a>
+            <a>2013</a>
+            <a>2012</a>
+            <a>2011</a>
+        </div>
+
+        <% Object.keys(members).map(k => { %>
+        <div id="y<%= k %>" class="years">
+            <h3 style="text-align: center; font-weight: 700; color: #997755; padding: 0 0 50px 0;">Batch of <%= k.replace('k', 0) %></h3>
+
+            <div class="inner">
+                <% members[k].map(m => { %>
+                <div class="box1">
+                    <div class="ctn" style="transform: translateY(-20%);">
+                        <img src="/past-members/<%= m.src || '../anon.jpg' %>" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+                        <div style="padding-top: 10px; color: #777;"><%= m.rank %></div>
+                        <p style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin: 4px 0 17px 0;"><%= m.name %></p>
+                    </div>
+                </div>
+                <% }) %>
+            </div>
+        </div>
+        <% }) %>
+    </div>
+</div>
+
+<script>
+    let main = document.querySelector('.main');
+    let nav = document.querySelector('.transparent');
+    let links = [...document.querySelectorAll(".sidebar a")];
+    let years = [...document.querySelectorAll(".years")];
+
+    let shift = window.getComputedStyle(nav).getPropertyValue('height');
+    main.style.marginTop = shift;
+
+    links.map(a => {
+        a.addEventListener("click", e => {
+            years.map(yr => yr.style.display = 'none');
+            document.querySelector('#y' + a.innerText.replace('0','k')).style.display = 'block';
+        });
+    });
+
+    years.map(yr => yr.style.display = "none");
+    document.querySelector("#y2k20").style.display = "block";
+
+
+    links.map(a =>{
+        a.addEventListener("click",e=>{
+            for(var i=0;i<links.length;i++)
+            {
+                if(links[i].classList.contains("selected_yr"))
+                {
+                    links[i].classList.toggle("selected_yr");
+                }
+            }
+            a.classList.toggle("selected_yr")
+        })
+    });
+
+    document.title = "Past Members • UAS-DTU";
+</script>
+
+<%-include("partials/footer")%>

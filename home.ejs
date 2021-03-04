@@ -1,0 +1,450 @@
+<%-include("partials/header")%>
+
+
+<style type="text/css">
+ #stage {
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      
+    }
+
+    #stage a {
+      position: relative;
+      display: inline-block;
+    }
+
+    .slide-holder{
+      width: 100%;
+      position: relative;
+    }
+
+    #stage a:nth-of-type(1) {
+      animation-name: fader;
+      animation-delay: 5s;
+      animation-duration: 0.5s;
+      z-index: 20;
+    }
+    #stage a:nth-of-type(2) {
+      display: none;
+      animation-name: myfade;
+      animation-delay: 5s;
+      animation-duration: 0.5s;
+    }
+    #stage a:nth-of-type(n+3) {
+      display: none;
+    }
+
+    @keyframes fader {
+      from { opacity: 1.0; }
+      to   { opacity: 0.0; }
+    }
+
+    @keyframes myfade{
+      from {opacity:0.0;}
+      to {opacity:1.0;}
+    }
+
+ @media only screen and (min-width: 600px){
+    #stage a>img{
+      width: 100%;
+      height: 100vh;
+    }
+    
+    #stage {
+      height: 100vh;
+      width: 100%;
+    }
+ }
+
+  @media only screen and (max-width: 600px){
+    #stage a>img{
+      width: 100%;
+      height: 40vh;
+    }
+
+    #stage{
+      height: 40vh;
+      width: 100%;
+    }
+  }
+    
+
+
+</style>
+
+<script type="text/javascript">
+
+  // Original JavaScript code by Chirp Internet: www.chirp.com.au
+  // Please acknowledge use of this code by including this header.
+
+  window.addEventListener("DOMContentLoaded", function(e) {
+
+    var stage = document.getElementById("stage");
+    var fadeComplete = function(e) { stage.appendChild(arr[0]); };
+    var arr = stage.getElementsByTagName("a");
+    for(var i=0; i < arr.length; i++) {
+      arr[i].addEventListener("animationend", fadeComplete, false);
+    }
+
+  }, false);
+
+</script>
+
+<style>
+  .owl-carousel{
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .owl-carousel img
+  {
+    height: 100vh;
+    width: 100vw;
+  }
+</style>
+<div class="owl-carousel owl-theme">
+  <div><img src="tarrot.png" alt=""></div>
+  <div><img src="swarm.jpeg" alt=""></div>
+</div>
+
+<script>
+  $(document).ready(function(){
+  $('.owl-carousel').owlCarousel({
+    animateOut: 'slideOutDown',
+    animateIn: 'flipInX',
+    items:1,
+    margin:30,
+    stagePadding:30,
+    smartSpeed:450
+  });
+});
+
+</script>
+
+
+<style>
+ .Achievements{
+  position: relative;
+  background-image: url("Team_UAS_DTU_Drone_Olympics_Win.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+ }
+
+ .Achievements h4{
+   color: white;
+ }
+ 
+ @media only screen and (max-width: 600px){
+   .Achievements{
+      text-align: left; 
+      padding: 6rem 0 0 5rem;
+      height: 40vh;
+   }
+
+   .Achievements h4{
+     font-size:2rem;
+     font-weight: 600;
+     
+   }
+ }
+
+ @media only screen and (min-width: 600px){
+   .Achievements{
+      height: 100vh;
+      text-align: left;
+      ;
+   }
+
+   .Achievements h4{
+     font-size:12vh;
+     font-weight: 600;
+     margin-top: 0;
+     margin-left: 12vh;
+     padding: 35vh 4vh 0 0;
+   }
+
+   .Achievements a{
+    height:9vh; 
+    width: 25vh; 
+    border:2px solid white; 
+    background-color: transparent; 
+    font-weight: 600; 
+    color: white;
+    margin-left: 12vh;
+   }
+ }
+</style>
+
+<div class="Achievements">
+ <div>
+    <h4>Achievements</h4>
+    <a class="waves-effect waves-light btn-large" href="/achievements">Button</a>
+</div>
+</div>
+
+<style>
+    #parallax{
+      background-image: url("WhatsApp Image 2021-01-28 at 14.02.36.jpeg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    @media only screen and (max-width:600px){
+      #parallax{
+        height: 40vh !important;
+      }
+    }
+
+    /* @media only screen and (max-width:400px){
+      #parallax{
+        height: 30vh!important;
+      }
+    } */
+
+    @media only screen and (min-width:600px) {
+      #parallax{
+        height: 100vh !important;
+      }
+    }
+
+    #parallax h2{
+      color: white; 
+      position: absolute; 
+      vertical-align: middle; 
+      top:40%; 
+      left: 50%; 
+      transform: translate(-50%, -50%);
+      font-size: 10vh;
+      font-weight: 600;
+    }
+</style>
+<div id="parallax">
+  <h2>SYSTEMS</h2>
+</div>
+
+<!-- <style>
+  #system{
+    position: relative;
+    margin:4vh 0 0 0;
+  }
+
+  #system .row{
+    margin-bottom:0;
+    background: black;
+  }
+
+  #system .col:hover h3{
+    visibility: visible;
+  }
+
+  #system .col:hover{
+    opacity:0.8;
+    transition: opacity .5s ease;
+  }
+
+  #system .col{
+    padding: 0 0 0 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    
+  }
+  #system .col>h3{
+    font-size: 8vh;
+    color: white;
+    text-align: center;
+    visibility: hidden;
+  }
+
+  #col1{
+    background-image: url("castor.jpg");
+  }
+  #col2{
+    background-image: url("gaia.jpeg");
+  }
+  #col3{
+    background-image: url("48.jpg");
+  }
+  #col4{
+    background-image: url("hero.jpg")
+  }
+
+  @media only screen and (min-width:600px) {
+    #row1{
+      height: 44vh;
+    }
+    #row2{
+      height: 42vh;
+    }
+  }
+
+  @media only screen and (max-width:600px) {
+    #row1{
+      height: 15rem;
+    }
+    #row2{
+      height: 14rem;
+    }
+  }
+</style>
+
+<div id="system" style="margin:0 0 0 0;">
+  <div class="row" id="row1">
+    <div class="col l8 m7 s7" id="col1">
+      <h3 style="text-align: center; ">Castor</h3>
+    </div>
+    <div class="col l4 m5 s5" id="col2">
+      <h3>Gaia</h3>
+    </div>
+  </div>
+  <div class="row" id="row2">
+    <div class="col l5 m5 s5" id="col3">
+      <h3>Tarrot</h3>
+    </div>
+    <div class="col l7 m7 s7" id="col4">
+      <h3>Aarush</h3>
+    </div>
+  </div>
+</div> -->
+
+
+<style>
+  .upcoming_events h2{
+    color:white
+  }
+
+  .upcoming_events{
+    background-image: url("taylor-van-riper-yQorCngxzwI-unsplash.jpg");
+    background-position: 50% 55%;
+  }
+
+  @media only screen and (min-width:600px){
+    .upcoming_events{
+      height: 100vh; 
+      width:100%;
+     }
+
+    .upcoming_events h2{
+    font-size: 12vh;
+    font-weight: 600;
+    margin-top: 0;
+    margin-left: 12vh;
+    white-space: nowrap;
+    padding: 35vh 4vh 0 0;
+    }
+
+    #upcoming_events_img{
+      padding-right: 2vh; 
+      padding-top:20vh; 
+      margin:auto
+    }
+    
+    .upcoming_events a{
+    margin-left: 12vh;
+    font-size: 3.5vh;
+     width: 22vh;
+     border:3px solid white; 
+     background: transparent; 
+     font-weight: 600;
+  }
+
+  .upcoming_events a:hover{
+    background: transparent;
+  }
+  .upcoming_events .inner_events{
+    display: flex;
+    position: relative;
+  }
+
+  }
+
+  @media only screen and (max-width:600px){
+    .upcoming_events{
+      height: 25rem;
+      width: 100%;
+      text-align: center;
+    }
+
+    .upcoming_events h2{
+      padding-top: 8rem;  
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-top: 0;
+      margin-left: 3rem;
+      white-space: nowrap;
+    }
+
+    .upcoming_events a{
+    margin-left: 3rem;
+  }
+  }
+</style>
+
+<div class="upcoming_events">
+  <div class="inner_events">
+    <div>
+      <h2>Upcoming Events</h2>
+      <a class="waves-effect waves-light btn-large" href="/upcoming_events">FLY IN</a>
+    </div>
+    <div class="hide-on-med-and-down" id="upcoming_events_img">
+      <img style="width:100%; height:50%;" src="website logo  final.png" alt="">
+    </div>
+  </div>
+</div>
+
+<style>
+  .sponsors h3{
+    font-size: 8vh;
+  }
+
+  @media only screen and (max-width:600px){
+    .sponsors .sponsor_logo{
+  padding-top: 3rem;
+  margin-left: 0rem;
+  margin-right: 0rem;
+  }
+
+  .sponsor_logo a{
+  padding-right: 1rem;
+  padding-bottom: 3rem;
+  display: inline-block;
+  }    
+  }
+
+  @media only screen and (min-width:600px){
+    .sponsors .sponsor_logo{
+    padding-top: 10vh;
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+
+  .sponsor_logo a{
+  padding-right: 3rem;
+  padding-bottom: 2rem;
+  display: inline-block;
+  }
+  
+  }
+
+ 
+</style>
+
+<!-- 
+<div class="sponsors" style="text-align: center; padding-top: 2rem; padding-bottom: 5rem; background-color:white">
+      <h3 style="font-weight: 500; color:white;">Sponsors</h3>
+      <div class="sponsor_logo">
+        <a href=""><img src="DTU.jpg" alt=""></a>
+        <a href=""><img src="reliance.png" alt=""></a>
+        <a href=""><img src="adani2.png" alt=""></a>
+        <a href=""><img src="ongc2.png" alt=""></a>
+        <a href=""><img src="lockheed-martin.png" alt=""></a>
+      </div>
+</div> -->
+
+<script src="/node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
+<%-include("partials/footer")%>

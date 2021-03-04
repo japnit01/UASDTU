@@ -1,0 +1,200 @@
+<%-include("partials/header")%>
+
+<style>    
+    nav.transparent {
+    position: fixed !important;
+    background-color: transparent !important;
+    top: 0;
+}
+
+#footer{
+    display: none;
+}
+
+.specs{
+    background-image: url("60.png");
+    background-position: center;
+    background-size: cover;
+    width: 100%;  
+    height:100vh;
+}
+ 
+ .specs .row{
+    color:white; 
+    position: relative; 
+    top:85%;
+    text-align: center;
+    display: inline-block;
+}
+
+.specs .row .col{
+    display: inline-block;
+}
+
+@media only screen and (min-width: 600px){
+    .specs .row .col{
+        padding: 0 10vh 0 10vh;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .specs .row .col{
+        padding: 0 2vh 0 2vh;
+    }
+}
+
+</style>
+ 
+
+    <div class="specs" style="text-align: center; margin:0; overflow: hidden; vertical-align:bottom; position: relative; text-align: center; vertical-align: bottom;">
+        <div class="row" data-aos="fade-up" data-aos-offset="20" data-aos-once="false" data-aos-duration="1000" data-aos-easing="ease-in-out"
+        data-aos-mirror="true"> 
+            <div class="col l4 m4 s4" style="border-right: 2px white solid;">
+                <div style="font-size: 5vh; font-weight: 500; color: white; text-align: center;"> 
+                    2.6Km+
+                </div>
+                <div style="font-size: 3vh; font-weight: 500; color: white; text-align: center; ">
+                    Range
+                </div>
+            </div>
+            <div class="col l4 m4 s4" style="border-right: 2px white solid;">
+                <div style="font-size: 5vh; font-weight: 500; color: white; text-align: center;"> 
+                    54km/h
+                </div>
+               <div style="font-size: 3vh; font-weight: 500; color: white; text-align: center; ">
+                   Cruise Speed
+               </div>
+           </div>
+           <div class="col l4 m4 s4">
+                <div style="font-size: 5vh; font-weight: 500; color: white; text-align: center;">
+                    <i class="fas fa-cloud-sun-rain"></i>
+                </div>
+                <div style="font-size: 3vh; display:inline-block; white-space:  nowrap; font-weight: 500; color: white; text-align: center; ">
+                    All weather adaptable
+                </div>
+            </div>
+        </div>  
+    </div>
+
+<style>
+
+    .eachsysrow{
+        margin: 13vh 8vh 1vh 8vh
+    }
+</style>
+
+<div class="row eachsysrow">
+    <div class="col l6 s12" style="text-align: center;">
+        <h2 style="font-weight: 800; color: #b29c71; font-size: 8vw;">GARUDA</h2>
+    </div>
+    <div class="col l6 s12">    
+        <p style="font-weight: 500; padding:3vh 0 8vh 8vh; font-size: medium;">This is a Modified Sig Rascal 110 R/C type aircraft accompanied by the presence of a Ground Control System. It is capable of performing autonomous flight and navigation with the presence of an option to Surveillance Data using optical sensors.</p>
+    </div>    
+</div>
+
+<style>
+    .aqspecs{
+        height: 100vh;
+        background-color: #ebebeb;
+    }
+/* 
+    .aqspecs .aquila160img{
+        background-color: #ebebeb;
+    } */
+
+    .div2col li span{
+        display: block;
+        color: black;
+    }
+    .specsctn {
+        color: #fff;
+    }
+
+    .div2col li:before{
+        background-color: rgba(46, 42, 42, 0.5);
+        width: 4vh;
+        display: block;
+        content: "";
+        height: 1px;
+        margin-top: 2vh;
+        margin-bottom: 1vh;
+    }
+
+    .div2col li .itsspec{
+        font-weight: 700;
+        padding-bottom: 1vh;
+        color: black;
+    }
+    @media only screen and (max-width: 993px){
+        .specsctn {
+            padding-left: 7vw !important;
+        }
+
+        .aqspecs img{
+            width: 100%;
+        }
+    }
+</style>
+
+<div class="aqspecs">
+    <div class="row" style="background-color: #ebebeb; margin-bottom: 0;">
+            <div class="col l6 m12 s12 aquila160img" style="text-align: center; background-color: #ebebeb; padding-top: 30vh;">
+                <img src="System Images without Background - Copy\7.png" alt="">
+            </div>
+            <div class="col l6 m12 s12 specsctn" data-aos="fade-up" data-aos-offset="20" data-aos-easing="ease-in-out" data-aos-mirror="true"data-aos-once="false" data-aos-duration="1000" style="padding-top: 20vh;">
+                <div class="specsheading" style="font-size: 6vh; font-weight: 700; margin-bottom: 5vh; color: black;">
+                    Garuda <span style="font-weight: 400;">Specs</span>
+                </div>
+                <div class="div2col" style="display: inline-flex;">
+                    <div>
+                        <ul>
+                            <li>
+                                <span class="itsspec">Range</span>
+                                <span>2.6Km</span>
+                            </li>
+                            <li>
+                                <span class="itsspec">Cruise Speed</span>
+                                <span>54km/h</span>
+                            </li>
+                            <li>
+                                <span class="itsspec">Wingspan</span>
+                                <span>2.8m</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="margin-left:30vh;">
+                        <ul>
+                            <li>
+                                <span class="itsspec">Gross Take Off Weight</span>
+                                <span>11Kg</span>
+                            </li>
+                            <li>
+                                <span class="itsspec">Payload Capacity</span>
+                                <span>2.5Kg</span>
+                            </li>
+                            <li>
+                                <span class="itsspec">Endurance</span>
+                                <span>23 min</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div style="height: 10vh;">
+        <div class="row">
+            <div class="col l6 m12 s12" style="background-color:#ebebeb; height: 10vh;">
+            </div>
+            <div class="col l6 m12 s12" style="background-color:#ebebeb; height: 10vh;">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+  document.title = "Garuda • UAS-DTU";
+</script>
+<%-include("partials/footer")%>
