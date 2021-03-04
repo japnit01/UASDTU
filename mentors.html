@@ -1,0 +1,68 @@
+<%-include("partials/header")%>
+
+<style>
+    nav.transparent {
+        position: fixed !important;
+        top: 0;
+        background-color: #000000 !important;
+    }
+    .outer {
+        display: flex;
+        display: -moz-flex;
+        display: -webkit-flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .box {
+        width: 27%;
+        min-width: 300px;
+        flex-shrink: 1;
+        text-align: center;
+        margin: 40px 20px;
+        box-sizing: border-box;
+        background-color: #ffffff;
+        padding: 0 20px;
+    }
+</style>
+
+<div class="main" style="background-color: #eeeeee; padding: 40px 0;">
+    <h3 style="text-align: center; margin-bottom: 60px;">Faculty Advisors</h3>
+    <div class="outer">
+        <% mentors["FacAdv"].map(m => { %>
+        <div class="box">
+            <div class="ctn" style="transform: translateY(-20%);">
+                <img src="/mentors/<%= m.img || 'default.jpg' %>" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+                <div style="color: #777; margin-top: 10px;"><%= m.rank %></div>
+                <div style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin-bottom: 10px;"><%= m.name %></div>
+                <div><%= m.desc %></div>
+            </div>
+        </div>
+        <% }) %>
+    </div>
+    
+    <h3 style="text-align: center; margin-bottom: 60px;">Project Advisors</h3>
+    <div class="outer">
+        <% mentors["ProjAdv"].map(m => { %>
+        <div class="box">
+            <div class="ctn" style="transform: translateY(-20%);">
+                <img src="/mentors/<%= m.img || 'default.jpg' %>" height="120" width="120" style="border-radius: 50%; border: 5px solid #ffffff;">
+                <div style="color: #777; margin-top: 10px;"><%= m.rank %></div>
+                <div style="font-size: 18px; font-weight: bold; text-transform: uppercase; margin-bottom: 10px;"><%= m.name %></div>
+                <div><%= m.desc %></div>
+            </div>
+        </div>
+        <% }) %>
+    </div>
+</div>
+
+<script>
+    let main = document.querySelector('.main');
+    let nav = document.querySelector('.transparent');
+
+    let shift = window.getComputedStyle(nav).getPropertyValue('height');
+    // console.log(shift);
+    main.style.marginTop = shift;
+    document.title = "Mentors • UAS-DTU";
+</script>
+
+<%-include("partials/footer")%>

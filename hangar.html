@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangar • UAS-DTU</title>
+    <link href="favicon-32x32.png" rel="shortcut icon" type="image/png">
+    <link rel="stylesheet" href="/materialize/css/materialize.css">
+    <script src="/jquery.min.js"></script>
+    <script src="/materialize/js/materialize.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Titillium+Web&display=swap" rel="stylesheet">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FKKZ2KYGD0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FKKZ2KYGD0');
+</script>
+</head>
+
+<body>
+    
+  <style>
+    .loader{
+      position:fixed;
+      top:0;
+      left:0;
+      z-index: 99;
+      width:100%;
+      height: 100%;
+      background-color: #ebebeb;
+      text-align: center;
+    }
+
+  #fp-nav{
+    z-index: 80 !important;
+  }
+
+@media only screen and (min-width: 600px){
+  .loader>img{
+      width: 30vw;
+      margin-top: 25vh;
+      margin-right: 7vw;
+    }
+}
+
+@media only screen and (max-width: 600px){
+  .loader>img{
+      width: 60vw;
+      margin-top: 25vh;
+      margin-right: 7vw;
+    }
+}
+
+.hidden{
+  animation:fadeOut 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut{
+  100%{
+    opacity:0;
+    visibility: hidden;
+  }
+}
+
+  </style>
+  <div class="loader">
+    <img src="l.png" alt="">
+    <div class="preloader-wrapper active" style="display: block; margin:2vh auto;">
+      <div class="spinner-layer spinner-blue-only">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener("load",function(){
+      const loader = document.querySelector(".loader");
+
+      loader.className += " hidden";
+    });
+  </script>
+
+
+
+
+    <script>    
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems,{});
+          });
+        
+        $(document).ready(function(){
+          $('.collapsible').collapsible();
+        });
+      </script>
+      
+      <style>
+        body {
+          font-family: 'Nunito Sans', sans-serif !important; /* common font */
+        }
+        .main-wrapper{
+          position: relative;
+        }
+    
+        .menu-holder{
+          position: fixed;
+          z-index: 50;
+        } 
+    
+        nav {
+          color: white;
+        }
+        @media only screen and (min-width: 993px){
+          nav a.sidenav-trigger {
+          display: block;
+          }
+        }
+        
+        .sidenav-overlay{
+         z-index: 0;
+        }
+
+        .sidenav {
+          line-height: 1rem;
+        }
+    
+        .sidenav li>a{
+            color: white;
+        }
+    
+        .sidenav li>a>i.material-icons{
+          color: white;
+        }
+    
+    
+        ::-webkit-scrollbar {
+        display: none;
+      }
+    
+      /* Track */
+      ::-webkit-scrollbar-track {
+       display: none;
+      }
+    
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+           display: none;
+      }
+    
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        display: none;
+      }    
+      
+      </style>
+      
+      <div class="main-wrapper">
+        <div class="menu-holder" style="width:100%" id="menu">
+          <nav  class="transparent"  style="height: 5rem; box-shadow: none;"> 
+              <!-- navbar content here  --> 
+              <div class="nav-wrapper">
+                  <ul class="left">
+                    <li><a href="#" class=" sidenav-trigger" data-target="slide_out" style="padding-top: 0.5rem;"><i class="material-icons" style="font-size:2rem;  color: #000;">menu</i></a></li>
+                  </ul>
+              </div>
+          </nav>
+    
+          <ul class="sidenav #000000 black" style="color:#eeeeee;" id="slide_out">
+            <!-- <li><a class="sidenav-close" href="#!"><i class="material-icons" style="font-size:2rem;">menu</i></a></li> -->
+            <li><a href="/" style="width:100%; height: 100%;"><img src="whitelogo2.png" alt="" style="transform:scale(2); width:100%; height: 100%; margin-top: 36px;"></a></li>
+            <hr style="margin: 1rem 2.5rem 1rem 2rem;">
+            <li><a href="/" class="active"><i class="material-icons">home</i> Home</a></li>
+            <li><a href="/about-us"><i class="material-icons">info</i> About Us</a></li>
+            <li><a href="/systems"><i class="material-icons">airplanemode_active</i> Hangar</a></li>
+            <li>
+              <ul class="collapsible" style="padding-left: 1rem;">
+              <li>
+                <div class="collapsible-header"><i class="material-icons" style="margin-right: 1.8rem;">group</i> <b>Team</b></div>
+                <div class="collapsible-body"> 
+                  <ul  style="background: black; padding-left: 4rem;">
+                      <li><a href="/mentors">Mentors</a></li>
+                      <li><a href="/curr-members">Current Members</a></li>
+                      <li><a href="/past-members">Past Members</a></li>
+                  </ul>
+                </div>
+              </li>
+              </ul>
+            </li>
+            <li><a href="/achievements"><i class="material-icons">emoji_events</i> Achievements</a></li>
+            <li><a href="/upcoming_events" class="active"><i class="material-icons">home</i> Upcoming Events</a></li>
+            <li><a href="/upcoming-projects" class="active"><i class="material-icons">precision_manufacturing</i> Upcoming Projects</a></li>
+            <!-- <li><a href="#section1"><i class="material-icons">email</i> Contact Us</a></li> -->
+          </ul>
+        </div>  
+
+
+
+        <style>
+
+        
+            .main{
+                position: relative;
+            }
+            
+            .system_row{
+                margin-bottom: 0;
+            }        
+            .row .content{
+                padding: 12vh 20vh 0 12vh;
+                color: black;
+                font-weight: 400;
+                font-family: 'Titillium Web', sans-serif;
+            }
+            
+            .heading{
+             font-weight: 600;
+             font-family: 'Lato', sans-serif;
+            }
+            
+            .para{
+                padding:4vh 0 0 0 ;
+                font-size: 1.4vw;
+            }
+            
+            .img_container{
+                background-color: #ebebeb;
+            }
+            
+            .img1{
+                padding: 20vh 0 0 0;
+                text-align: center;
+            }
+            .img img, .img1 img {
+                width: 100%;
+            }
+            
+            .img_container1
+            {
+                background-color:#ebebeb;
+            }
+            
+            .row .content1{
+                color: black;
+                font-weight: 400;
+            }
+            .tesla-btn {
+                border: none;
+                background-color: #111;
+                height: 50px;
+                border-radius: 25px;
+                font-size: 16px;
+                padding: 11px 80px;
+                margin-top: 50px;
+                margin-bottom: 80px;
+                font-weight: 600;
+                display: inline-block;
+                cursor: pointer !important;
+                color: #eee;
+            }
+            
+        @media only screen and (min-width: 600px){
+            .img_container{
+                padding:0 0 0 0;
+                height: 100vh;
+            }
+
+            .para{
+                padding:4vh 0 0 0 ;
+                font-size: 1.4vw;
+            }
+
+            .img_container1
+            {
+                background-color:#ebebeb;
+                padding:0 0 0 0;
+                height: 100vh;
+            }
+
+            .img1{
+                padding: 20vh 0 0 0;
+                text-align: center;
+            }
+
+            .img
+            { 
+                padding: 20vh 0 0 0;
+                text-align: center;
+            } 
+
+            .row .content{
+                padding: 12vh 20vh 0 12vh;
+                color: black;
+                font-weight: 400;
+                font-family: 'Titillium Web', sans-serif;
+            }
+
+            .row .content1{
+                padding: 12vh 6vw 0 10vw;
+                font-family: 'Titillium Web', sans-serif
+            }    
+
+            .row .content1{
+                padding: 12vh 6vw 0 10vw;
+            }       
+        }
+
+        @media only screen and (max-width: 600px){
+            .img_container{
+                background-color: #ebebeb;
+                height: auto;
+            }
+
+            .para{
+                padding:0vh 0 0 0 ;
+                font-size: 18px;
+            }
+
+            .row .content{
+                margin-top: 2vh;
+                padding: 0vh 8vw 0 8vw;
+                font-family: 'Titillium Web', sans-serif;
+                text-align: center;
+            }
+
+            .row .content1{
+                margin-top: 2vh;
+                padding: 0vh 8vw 0 8vw;
+                font-family: 'Titillium Web', sans-serif;
+                text-align: center;
+            }
+
+            .img_container1
+            {
+                background-color:#ebebeb;
+                height: auto;
+            }
+
+            .img1{
+                padding:8vh 0 8vh 0;
+                text-align: center;
+            }
+
+            .heading{
+                text-align: center;
+            }
+
+            .img
+            { 
+                padding:8vh 0 8vh 0;
+                text-align: center;
+            }
+        }
+
+            </style>
+            
+        <div class="main">
+            <div class="castor">
+                <div class="row system_row">
+                    <div class="col l6 m12 s12 push-l6 img_container1">
+                        <div class = "img1">
+                            <img src="System Images without Background - Copy/aquila (1).png" alt="">
+                        </div>
+                    </div>
+                    <div class="col l6 m12 s12 pull-l6 content1"  data-aos="fade-up" data-aos-offset="200"
+                        data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out"
+                        data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-center">
+                        <h3 class="heading">Aquila</h3>
+                        <p class="para">
+                            It comprises of a long flying range accompanied by an endurance of up to 3 hours. The drone has a maximum takeoff weight of 22 kilograms and a payload weight of 1 kilogram. The UAV is also capable of Human Detection and Geotagging and maintains complete autonomy in mission execution with the use of Artificial Intelligence complimented by GPS denied navigation.
+                        </p>
+                        <a class="tesla-btn" href="/aquila">LEARN MORE</a>
+                        <!-- <button class="hexbtn"><div>&gt;</div></button> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="castor">
+                <div class="row system_row">
+                    <div class="col l6 m12 s12 img_container">
+                        <div class = "img">
+                            <img src="System Images without Background - Copy/castor.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col l6 m12 s12 content"  data-aos="fade-up" data-aos-offset="200"
+                        data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out"
+                        data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-center">
+                        <h3 class="heading">Kkastor</h3>
+                        <p class="para">
+                            Kkastor is a very structured and systematic model which is used for navigation or way-finding in areas denied of GPS. It has an efficient ‘Encrypted Wireless GCS Communication’ system which helps in its smooth  working. SLAM has a robust system due to which it can endure weather adversity, with multiple failsafes which makes it really user friendly.
+                        </p>
+                        <a class="tesla-btn" href="/castor">LEARN MORE</a>
+                        <!-- <button class="hexbtn"><div>&gt;</div></button> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="castor">
+                <div class="row system_row">
+                    <div class="col l6 m12 s12 push-l6 img_container1">
+                        <div class = "img1">
+                            <img src="System Images without Background - Copy/tilt_tricopter.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col l6 m12 s12 pull-l6 content1"  data-aos="fade-up" data-aos-offset="200"
+                        data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out"
+                        data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-center">
+                        <h3 class="heading">Tilt Tricopter</h3>
+                        <p class="para">
+                            Cruising at 90 km/h, the system has a considerably High Range complimented by a phenomenal endurance of up to 85 minutes. The design contains a Tilt-Rotor for increased efficiency and making the model lightweight. Another highlights of this system include it’s Swarming Capabilities.
+                        </p>
+                        <a class="tesla-btn" href="/tilttricopter">LEARN MORE</a>
+                        <!-- <button class="hexbtn"><div>&gt;</div></button> -->
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="castor">
+                <div class="row system_row">
+                    <div class="col l6 m12 s12 img_container">
+                        <div class = "img">
+                            <img src="System Images without Background - Copy/TARROT.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col l6 m12 s12 content"  data-aos="fade-up" data-aos-offset="200"
+                        data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out"
+                        data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-center">
+                        <h3 class="heading">Tarot</h3>
+                        <p class="para">
+                            Equipped with Swarming Capabilities, the system can also undertake Real-Time High Definition Surveillance with a 20x Zoom. In addition to this, it is also incorporated by Aerial Surveillance and Mapping Capabilities.
+                        </p>
+                        <a class="tesla-btn" href="/tarrot">LEARN MORE</a>
+                        <!-- <button class="hexbtn"><div>&gt;</div></button> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="castor">
+                <div class="row system_row">
+                    <div class="col l6 m12 s12 push-l6 img_container1">
+                        <div class = "img1">
+                            <img src="transparents/17-2.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col l6 m12 s12 pull-l6 content1"  data-aos="fade-up" data-aos-offset="200"
+                        data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out"
+                        data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-center">
+                        <h3 class="heading">Aarush X1</h3>
+                        <p class="para">
+                            Alongside being equipped with a Fully Autonomous Navigation System, the aircraft is also capable of undertaking High-Definition Real-Time Surveillance with a 40x Zoom Capability. Besides these, the system can also cruise at remarkable speeds of upto 70 kmph and has a take-off and landing height of upto 260 ft. It was developed in association with Lockheed Martin.
+                        </p>
+                        <a class="tesla-btn" href="/aarushx1">LEARN MORE</a>
+                        <!-- <button class="hexbtn"><div>&gt;</div></button> -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="castor">
+                <div class="row system_row">
+                    <div class="col l6 m12 s12 img_container">
+                        <div class = "img">
+                            <img src="System Images without Background - Copy\aarush x2 front.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col l6 m12 s12 content"  data-aos="fade-up" data-aos-offset="200"
+                        data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out"
+                        data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-center">
+                        <h3 class="heading">Aarush X2</h3>
+                        <p class="para">
+                            This is an optimized version of AARUSH X1. Similar to X1, it also consists a Fully Autonomous Navigation System and the capability to undertake High Definition Real-Time Surveillance alongside with a 40x Zoom Capability, accompanied by a comparatively short take-off and landing height of upto 150ft.
+                        </p>
+                        <a class="tesla-btn" href="/aarushx2">LEARN MORE</a>
+                        <!-- <button class="hexbtn"><div>&gt;</div></button> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="castor">
+                <div class="row system_row">
+                    <div class="col l6 m12 s12 push-l6 img_container1">
+                        <div class = "img1">
+                            <img src="System Images without Background - Copy\7.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col l6 m12 s12 pull-l6 content1"  data-aos="fade-up" data-aos-offset="200"
+                        data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out"
+                        data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-center">
+                        <h3 class="heading">Garuda</h3>
+                        <p class="para">
+                            This is a Modified Sig Rascal 110 R/C type aircraft accompanied by the presence of a Ground Control System. It is capable of performing autonomous flight and navigation with the presence of an option to Surveillance Data using optical sensors.
+                        </p>
+                        <a class="tesla-btn" href="/garuda">LEARN MORE</a>
+                        <button class="hexbtn"><div>&gt;</div></button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="castor">
+                <div class="row system_row">
+                    <div class="col l6 m12 s12 img_container">
+                        <div class = "img">
+                            <img src="System Images without Background - Copy\system.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col l6 m12 s12 content"  data-aos="fade-up" data-aos-offset="200"
+                        data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out"
+                        data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-center">
+                        <h3 class="heading">Avniel</h3>
+                        <p class="para">
+                            Embodies a Fully Autonomous System and can undertake High Definition Real-Time Surveillance. The system is designed to carry High Payload with an additional feature of returning to the base itself in case of lost linkage.
+                        </p>
+                        <a class="tesla-btn" href="/avniel">LEARN MORE</a>
+                        <button class="hexbtn"><div>&gt;</div></button>
+                    </div>
+                </div>
+            </div> -->
+
+        </div>
+<script src="aos-master\dist\aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
+<%-include("partials/footer")%>
+</body>
+</html>
+

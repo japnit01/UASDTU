@@ -1,0 +1,252 @@
+<%-include("partials/header")%>
+
+<style>    
+    nav.transparent {
+    position: fixed !important;
+    background-color: transparent !important;
+    top: 0;
+}
+
+#footer{
+    display: none;
+}
+ 
+.specs .row{
+    color:white; 
+    position: relative; 
+    text-align: center;
+}
+
+@media only screen and (min-width: 600px){
+    .specs .row .col{
+        padding: 0 10vh 0 10vh;
+    }
+
+    .specs .row{
+        width: 70%;
+        top:80%;
+    }
+
+    .num{
+        font-size: 2.5vw;
+    }
+
+    .col3 .head{
+        white-space: nowrap;
+    }
+
+    .head{
+        font-size: 1.5vw;
+    }
+
+    .specs{
+    background-image: url("castor.jpg");
+    background-position: center;
+    background-size: cover;
+    width: 100%;  
+    height:100vh;
+}
+}
+
+@media only screen and (max-width: 600px){
+    .specs .row .col{
+        padding: 0 1vw 0 1vw  !important;
+        height: 100%;
+    }
+
+    .specs .row{
+        width:100vw;
+        top: 86%;
+    }
+
+    .num{
+        font-size: 5vw;
+    }
+
+    .head{
+        font-size: 3vw;
+    }
+
+    .specs{
+    background-image: url("castor.jpg");
+    background-position: 35% 0%;
+    background-size: cover;
+    width: 100%;  
+    height:100vh;
+}
+}
+
+</style>
+ 
+
+    <div class="specs" style="text-align: center; margin:0vh 0 0 0; overflow: hidden; vertical-align:bottom; position: relative; text-align: center; vertical-align: bottom;">
+        <div class="row" data-aos="fade-up" data-aos-offset="20" data-aos-once="false" data-aos-duration="1000" data-aos-easing="ease-in-out"
+        data-aos-mirror="true"> 
+            <div class="col l4 m4 s4 col1" style="border-right: 2px white solid;">
+                <div class="num" style="font-weight: 500; color: white; text-align: center;"> 
+                    35min
+                </div>
+                <div class="head" style="font-weight: 500; color: white; text-align: center; ">
+                    Endurance
+                </div>
+            </div>
+            <div class="col l4 m4 s4 col2" style="border-right: 2px white solid;">
+                <div class="num" style="font-weight: 500; white-space: nowrap; color: white; text-align: center;"> 
+                    2m/s
+                </div>
+               <div class="head" style="font-weight: 500; white-space: nowrap; color: white; text-align: center; ">
+                   Cruise Speed
+               </div>
+           </div>
+           <div class="col l4 m4 s4 col3" >
+                <div class="num" style="font-weight: 500; color: white; text-align: center;">
+                    <i class="fas fa-cloud-sun-rain"></i>
+                </div>
+                <div class="head" style="width:auto; font-weight: 500; color: white; text-align: center; ">
+                    All weather adaptable
+                </div>
+            </div>
+        </div>  
+    </div>
+
+<style>
+
+    .eachsysrow{
+        margin: 13vh 8vh 1vh 8vh
+    }
+</style>
+
+<div class="row eachsysrow">
+    <div class="col l6 s12" style="text-align: center;">
+        <h2 style="font-weight: 800; color: #b29c71; font-size: 8vw;">KKASTOR</h2>
+    </div>
+    <div class="col l6 s12">    
+        <p style="font-weight: 500; padding:3vh 0 8vh 0; font-size: 18px;">The system is suitable for indoor areas that are denied of GPS, as it possess the ability to Navigate it’s way even in GPS denied areas and is considered to be India’s first Indoor Navigation Setup. Moreover, the system masters in Localization of a target and further, keeping track of it in 3D system along with Obstacle Detection and Avoidance. It’s flight time is considered to be as long as 20 minutes.</p>
+    </div>    
+</div>
+
+<style>
+    .aqspecs{
+        height: 100vh;
+        background-color: black;
+    }
+
+    .aquila160img>img{
+        width: 100%;
+    }
+
+    .div2col li span{
+        display: block;
+    }
+    .specsctn {
+        color: #fff;
+    }
+
+    .div3col{
+        margin-left: 15vw;
+    }
+
+    .div2col li:before{
+        background-color: hsla(0,0%,100%,.5);
+        width: 4vh;
+        display: block;
+        content: "";
+        height: 1px;
+        margin-top: 2vh;
+        margin-bottom: 1vh;
+    }
+
+    .div2col li .itsspec{
+        font-weight: 700;
+        padding-bottom: 1vh;
+    }
+
+    @media only screen and (min-width: 600px){
+    .specs .row .col{
+        padding: 0 10vh 0 10vh;
+    }
+
+    .div3col1{
+        width: 20vw;
+     }
+}
+
+@media only screen and (max-width: 600px){
+    .specs .row .col{
+        padding: 0 2vw 0 2vw !important;
+    }
+
+    .div3col{
+        margin-left: 10vw;
+    }
+    .specs .row{
+        width:100vw
+    }
+
+    .div3col1{
+        width: 33vw;
+    }
+}
+</style>
+
+<div class="aqspecs">
+    <div class="row" style="background-color: black; margin-bottom: 0;">
+            <div class="col l6 m12 s12 aquila160img" style="text-align: center; padding-top: 30vh;">
+                <img src="System Images without Background - Copy\castor.png" alt="">
+            </div>
+            <div class="col l6 m12 s12 specsctn" data-aos="fade-up" data-aos-offset="20" data-aos-easing="ease-in-out" data-aos-mirror="true"data-aos-once="false" data-aos-duration="1000" style="padding-top: 20vh;">
+                <div class="specsheading" style="font-size: 6vh; font-weight: 700; margin-bottom: 5vh;">
+                    Kkastor <span style="font-weight: 400;">Specs</span>
+                </div>
+                <div class="div2col" style="display: inline-flex;">
+                    <div class="div3col1">
+                        <ul>
+                            <li>
+                                <span class="itsspec">Dimensions</span>
+                                <span>50x50x15</span>
+                            </li>
+                            <li>
+                                <span class="itsspec">Detection Range</span>
+                                <span>6m</span>
+                            </li>
+                            <li>
+                                <span class="itsspec">Power System</span>
+                                <span>Hybrid</span>
+                            </li>
+                            <li>
+                                <span class="itsspec">Application</span>
+                                <span>Navigation in GPS deined areas</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="div3col">
+                        <ul>
+                            <li>
+                                <span class="itsspec">Gross Take Off Weight</span>
+                                <span>1.6Kg</span>
+                            </li>
+                            <li>
+                                <span class="itsspec">Swarm</span>
+                                <span>Scalable upto 75 UAV's</span>
+                            </li>
+                            <li>
+                                <span class="itsspec">Endurance</span>
+                                <span>35 min</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div style="height: 10vh; background-color: black;">
+
+    </div>
+</div>
+
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+  document.title = "Castor • UAS-DTU";
+</script>
+<%-include("partials/footer")%>

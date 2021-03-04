@@ -1,0 +1,499 @@
+<%-include("partials/header")%>
+
+<style>    
+    nav.transparent {
+    position: fixed !important;
+    background-color: transparent !important;
+    top: 0;
+}
+
+#footer{
+    display: none;
+}
+
+.videocontainer{
+    width: 100%;
+    align-items: center;
+    overflow: hidden;
+    display: block;
+}
+
+@media only screen and (min-width: 600px){
+    .videocontainer video{
+        object-fit: cover;  
+        width: 100%;
+        height: 100vh;
+        object-position: 50% 70%;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .videocontainer video{
+        object-fit: cover;  
+        width: 100%;
+    }
+}
+</style>
+
+<div class="videocontainer">
+    <video loop muted autoplay controls>
+        <source src="AQUILA160.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>    
+</div>
+
+<style>
+
+    .eachsysrow{
+        margin: 13vh 8vh 1vh 8vh;
+    }
+    @media only screen and (max-width: 600px){
+        .eachsysrow h2 {
+            font-size: 36px !important;
+        }
+    }
+</style>
+
+<div class="row eachsysrow">
+    <div class="col l6 s12" style="text-align: center;">
+        <h2 style="font-weight: 800; white-space: nowrap; color: #b29c71; font-size: 6vw;">AQUILA 160</h2>
+    </div>
+    <div class="col l6 s12">    
+        <p style="font-weight: 500; padding-top: 3vh; font-size: medium;">Comprises of a long flying range which extends up to more than 100 kilometers accompanied by multiple fail-safes and endurance of up to 3 hours, which is a result of it’s hybrid power system. The aircraft has a maximum takeoff weight of 22 kilograms and a payload weight of 1 kilogram with safe autonomous payload delivery system. The UAV is also capable of Human Detection and Geotagging irrespective of the time. The UAV maintains complete autonomy in mission execution with the use of Artificial Intelligence complimented by GPS denied navigation. Moreover, it also has a wide range of swarm capabilities that can be controlled by more than one entity with large scalability.</p>
+    </div>    
+</div>
+ 
+<style>
+    .specs{
+        background-image: url("gaia2.jpg");
+        background-position: center;
+        background-size: cover;
+        width: 100%;  
+        height:100vh;
+    }
+ 
+ .specs .row{
+    color:white; 
+    position: relative; 
+    text-align: center;
+}
+
+@media only screen and (min-width: 600px){
+    .specs .row .col{
+        padding: 0 10vh 0 10vh;
+    }
+
+    .specs .row{
+        width: 70%;
+        top:80%;
+    }
+
+    .num{
+        font-size: 2.5vw;
+    }
+
+    .col3 .head{
+        white-space: nowrap;
+    }
+
+    .head{
+        font-size: 1.5vw;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .specs .row .col{
+        padding: 0 1vw 0 1vw  !important;
+        height: 100%;
+    }
+
+    .specs .row{
+        width:100vw;
+        top: 86%;
+    }
+
+    .num{
+        font-size: 5vw;
+    }
+
+    .head{
+        font-size: 3vw;
+    }
+}
+
+</style>
+ 
+
+    <div class="specs" style="text-align: center; margin:10vh 0 0 0; overflow: hidden; vertical-align:bottom; position: relative; text-align: center; vertical-align: bottom;">
+        <div class="row" data-aos="fade-up" data-aos-offset="20" data-aos-once="false" data-aos-duration="1000" data-aos-easing="ease-in-out"
+        data-aos-mirror="true"> 
+            <div class="col l4 m4 s4 col1" style="border-right: 2px white solid;">
+                <div class="num" style="font-weight: 500; color: white; text-align: center;"> 
+                    100Km+
+                </div>
+                <div class="head" style="font-weight: 500; color: white; text-align: center; ">
+                    Range
+                </div>
+            </div>
+            <div class="col l4 m4 s4 col2" style="border-right: 2px white solid;">
+                <div class="num" style="font-weight: 500; white-space: nowrap; color: white; text-align: center;"> 
+                    14m/s
+                </div>
+               <div class="head" style="font-weight: 500; white-space: nowrap; color: white; text-align: center; ">
+                   Cruise Speed
+               </div>
+           </div>
+           <div class="col l4 m4 s4 col3" >
+                <div class="num" style="font-weight: 500; color: white; text-align: center;">
+                    <i class="fas fa-cloud-sun-rain"></i>
+                </div>
+                <div class="head" style="width:auto; font-weight: 500; color: white; text-align: center; ">
+                    All weather adaptable
+                </div>
+            </div>
+        </div>  
+    </div>
+    
+    <div style="height: 30vh;">
+        
+    </div>    
+
+    <style>
+        .videopayload video{
+            object-fit: cover;
+
+        }
+
+        .videopayload{
+            height: 100vh;
+            padding: 0 !important;
+        }
+
+        .content{
+            font-size: 1.3vw;
+            width:35vw;
+            color: white;
+            height: 50vh;
+        }
+
+        .payloadcontent .heading{
+            font-size: 2.5vw;
+            color: #fff;
+        }
+
+        .content .conline{
+            width: 100%;
+            padding: 3vh 0 1vh 0;
+            border-bottom: 1px solid white;
+            
+        }
+        .conline .specline{
+            display: inline-block;
+        }
+        .conline .weight{
+            display: inline-block;
+            float: right;
+        }
+
+        .row .payloadcontent{
+                padding: 15vh 0 0 13vw 
+            }
+
+        @media only screen and (min-width: 600px){
+            .videopayload{
+            height: 100vh;
+            padding-right: 5vw !important;
+            }
+
+            .content{
+                padding-left: 4vw;
+            }
+
+            .payloadcontent .heading{
+                padding-bottom: 25vh;
+            }
+
+
+        }
+
+        @media only screen and (max-width: 993px){
+            .row .payloadcontent{
+                padding: 15vh 0 0 5vw 
+            }
+        }
+
+        @media only screen and (max-width: 600px){
+            .row .payloadcontent{
+                position: absolute;
+                top: 55%;
+            }
+
+            .payloadcontent .content{
+                margin:0 auto;
+                font-size: 2.5vw;
+            }
+
+            .payloadcontent .heading{
+                text-align: center;
+                padding-bottom: 5vh;
+            }
+            
+            .row .payloadcontent{
+                padding: 10vh 0 0 0; 
+            }
+
+            .payloadcontent .content .specline{
+                text-align: left;
+            }
+
+        }
+
+    </style>
+<div style="background-color: black; height: 100vh;">
+    <div class="row" style="height: 100vh; margin-bottom: 0;">
+        <div class="col l8 m6 s12 payloadcontent" data-aos="fade-up" data-aos-offset="20" data-aos-easing="ease-in-out" data-aos-mirror="true"data-aos-once="false" data-aos-duration="1000">
+            <div class="heading">
+                <div style="display: inline-block;">
+                    Safe and Autonomous Payload Delivery
+                </div>
+            </div>
+            <div class="content">
+                <div class="conline">
+                    <span class="specline">Max Take Off Weight</span> <span class="weight">22Kg</span>
+                </div>
+                <div class="conline">
+                    <span class="specline">Payload Capacity</span> <span class="weight">1Kg</span>
+                </div>    
+                <div class="conline">
+                    <span class="specline">Flight Time</span><span class="weight">3.5hr</span>
+                </div>
+            </div>
+        </div>
+        <div class="col l4 m6 s12 videopayload"> 
+            <video loop muted autoplay height="100%" width="100%">
+                <source src="payload.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+</div>
+
+<style>
+.swarm_video{
+    align-items: center;
+    overflow: hidden;
+    display: block;
+}
+
+.swarm_video .svideo{
+    padding: 0;
+}
+
+.swarm_video video{
+  object-fit: cover;  
+  width: 75vw;
+  height: 100vh;
+}
+
+.swarm_para{
+    font-size: 2.5vh; 
+    font-weight: 400; 
+    color: black;
+}
+
+.swarm_heading{
+    font-size: 3.5vw;
+}
+@media only screen and (min-width: 993px){
+    .row .swarmcontent{
+    padding: 20vh 8vh 0 10vh;
+    }
+
+    .swarm_para{
+    padding-top: 4vh;
+    }
+    .swarmcontent2 {
+        display: none;
+    }
+
+}
+
+@media only screen and (max-width: 993px){
+    .swarm_video video{
+        object-fit: cover;  
+        width:  100vw;
+        height: 80vh;
+    }
+
+    .swarm_para{
+        padding-top: 1vh;
+        float: left;
+        padding-right: 10vw;
+    }
+
+    .swarm_heading{
+        padding-right: 4vw;
+        float:right;
+        font-size: 6vw;
+    }
+
+    .swarm_video .row{
+        margin: 0;
+    }
+
+    .swarmcontent2{
+        margin: 5vh 0 7vh 0;
+        display: block;
+    }   
+
+}
+</style>
+
+<div class="swarm_video" style="width:100%">
+    <div class="row" style="margin-bottom: 0;">
+        <div class="col l9 m12 s12 svideo" style="font-size: 0;">
+            <video loop muted autoplay width="100%" height="100%">
+                <source src="swarm.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="col l3 swarmcontent hide-on-med-and-down" data-aos="fade-up" data-aos-offset="20" data-aos-easing="ease-in-out" data-aos-mirror="true"data-aos-once="false" data-aos-duration="1000" >
+                <div class="swarm_heading" style="font-weight: 600; color: black;">
+                    Swarm 
+                </div>
+                <div class="swarm_para">
+                    Decentralized swarm scalable upto 75 UAV's embodying the capabilities of GPS denied navigation, RGBD human tracking and night vision
+                </div>
+        </div>     
+    </div>
+
+
+    <div class="swarmcontent2" data-aos="fade-up" data-aos-offset="20" data-aos-easing="ease-in-out" data-aos-mirror="true"data-aos-once="false" data-aos-duration="1000" >
+        <div class="row">
+            <div class="col m5 s5">
+                <div class="swarm_heading" style="font-weight: 600; color: black;">
+                    Swarm 
+                </div>
+            </div>
+            <div class="col m7 s7">
+                <div class="swarm_para">
+                    Decentralized swarm scalable upto 75 UAV's embodying the capabilities of GPS denied navigation, RGBD human tracking and night vision
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .aqspecs{
+        height: 100vh;
+        background-color: black;
+    }
+
+    .aquila160img>img{
+        width:100%
+    }
+
+    .div2col li span{
+        display: block;
+    }
+    .specsctn {
+        color: #fff;
+    }
+
+    .div2col li:before{
+        background-color: hsla(0,0%,100%,.5);
+        width: 4vh;
+        display: block;
+        content: "";
+        height: 1px;
+        margin-top: 2vh;
+        margin-bottom: 1vh;
+    }
+
+    .div3col{
+        margin-left:15vw;
+    }
+
+    .div2col li .itsspec{
+        font-weight: 700;
+        padding-bottom: 1vh;
+    }
+    @media only screen and (max-width: 993px){
+        .specsctn {
+            padding-left: 7vw !important;
+        }
+    }
+
+    @media only screen and (max-width: 993px){
+        .specsctn {
+            padding-left: 5vw !important;
+        }
+    }
+</style>
+
+<div class="aqspecs">
+    <div class="row" style="background-color: black; margin-bottom: 0;">
+            <div class="col l6 m12 s12 aquila160img" style="text-align: center; padding-top: 30vh;">
+                <img src="System Images without Background - Copy\aquila (1).png" alt="">
+            </div>
+            <div class="col l6 m12 s12 specsctn" data-aos="fade-up" data-aos-offset="20" data-aos-easing="ease-in-out" data-aos-mirror="true"data-aos-once="false" data-aos-duration="1000" style="padding-top: 20vh;">
+                <div class="specsheading" style="font-size: 6vh; font-weight: 700; margin-bottom: 5vh;">
+                    Aquila160 <span style="font-weight: 400;">Specs</span>
+                </div>
+                <div class="div2col" style="display: inline-flex;">
+                    <div>
+                        <ul>
+                            <li>
+                                <span class="itsspec">Range</span>
+                                <span>100Km+</span>
+                            </li>
+                            <li>
+                                <span class="itsspec">Max Speed</span>
+                                <span>50km/h</span>
+                            </li>
+                            <li>
+                                <span class="itsspec">Power System</span>
+                                <span>Hybrid</span>
+                            </li>
+                            <li>
+                                <span class="itsspec">Application</span>
+                                <span>Human Tracking & Reconnaissance</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="div3col">
+                        <ul>
+                            <li>
+                                <span class="itsspec" style="white-space: nowrap;">Gross Take Off Weight</span>
+                                <span>22Kg</span>
+                            </li>
+                            <li>
+                                <span class="itsspec">Payload Capacity</span>
+                                <span>1Kg</span>
+                            </li>
+                            <li>
+                                <span class="itsspec">Swarm</span>
+                                <span>Scalable upto 75 UAV's</span>
+                            </li>
+                            <li>
+                                <span class="itsspec">Endurance</span>
+                                <span>3 hrs</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div style="height: 10vh; background-color: black;">
+
+    </div>
+</div>
+
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+  document.title = "Aquila • UAS-DTU";
+</script>
+<%-include("partials/footer")%>
