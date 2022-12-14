@@ -1,476 +1,533 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home • UAS-DTU</title>
-    <link href="./public/public/favicon-32x32.png" rel="shortcut icon" type="image/png">
-    <link rel="stylesheet" href="public/materialize/css/materialize.css">
-    <script src="public/jquery.min.js"></script>
-    <script src="public/materialize/js/materialize.js"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Crete+Round:ital@1&display=swap" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&display=swap" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Crete+Round&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Tinos&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Karma:wght@300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
-    <link href="public/aos-master/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="public/fullPage.js-master/dist/fullpage.css">
-    <script src="public/fullPage.js-master/dist/fullpage.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FKKZ2KYGD0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home • UAS-DTU</title>
+  <link href="./public/public/favicon-32x32.png" rel="shortcut icon" type="image/png">
+  <link rel="stylesheet" href="public/materialize/css/materialize.css">
+  <script src="public/jquery.min.js"></script>
+  <script src="public/materialize/js/materialize.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Crete+Round:ital@1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crete+Round&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tinos&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Karma:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+  <link href="public/aos-master/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="public/fullPage.js-master/dist/fullpage.css">
+  <script src="public/fullPage.js-master/dist/fullpage.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FKKZ2KYGD0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-FKKZ2KYGD0');
-</script>
+    gtag('config', 'G-FKKZ2KYGD0');
+  </script>
 </head>
+
 <body>
-  
-<style>
-  .loader{
-    position:fixed;
-    top:0;
-    left:0;
-    z-index: 99;
-    width:100%;
-    height: 100%;
-    background-color: #ebebeb;
-    text-align: center;
-  }
 
-#fp-nav{
-  z-index: 80 !important;
-}
+  <style>
+    .loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 99;
+      width: 100%;
+      height: 100%;
+      background-color: #ebebeb;
+      text-align: center;
+    }
+
+    #fp-nav {
+      z-index: 80 !important;
+    }
 
 
-@media only screen and (min-width: 600px){
-.loader>img{
-    width: 30vw;
-    margin-top: 25vh;
-    margin-right: 7vw;
-  }
-}
+    @media only screen and (min-width: 600px) {
+      .loader>img {
+        width: 30vw;
+        margin-top: 25vh;
+        margin-right: 7vw;
+      }
+    }
 
-@media only screen and (max-width: 600px){
-.loader>img{
-    width: 60vw;
-    margin-top: 25vh;
-    margin-right: 7vw;
-  }
-}
+    @media only screen and (max-width: 600px) {
+      .loader>img {
+        width: 60vw;
+        margin-top: 25vh;
+        margin-right: 7vw;
+      }
+    }
 
-.hidden{
-animation:fadeOut 1s;
-animation-fill-mode: forwards;
-}
+    .hidden {
+      animation: fadeOut 1s;
+      animation-fill-mode: forwards;
+    }
 
-@keyframes fadeOut{
-100%{
-  opacity:0;
-  visibility: hidden;
-}
-}
-
-</style>
-<div class="loader">
-  <img src="./public/l.png" alt="">
-  <div class="preloader-wrapper active" style="display: block; margin:2vh auto;">
-    <div class="spinner-layer spinner-blue-only">
-      <div class="circle-clipper left">
-        <div class="circle"></div>
-      </div><div class="gap-patch">
-        <div class="circle"></div>
-      </div><div class="circle-clipper right">
-        <div class="circle"></div>
+    @keyframes fadeOut {
+      100% {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+  </style>
+  <div class="loader">
+    <img src="./public/l.png" alt="">
+    <div class="preloader-wrapper active" style="display: block; margin:2vh auto;">
+      <div class="spinner-layer spinner-blue-only">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div>
+        <div class="gap-patch">
+          <div class="circle"></div>
+        </div>
+        <div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<script>
-  window.addEventListener("load",function(){
-    const loader = document.querySelector(".loader");
+  <script>
+    window.addEventListener("load", function () {
+      const loader = document.querySelector(".loader");
 
-    loader.className += " hidden";
-  });
-</script>
-
+      loader.className += " hidden";
+    });
+  </script>
 
 
-  <script>    
-    document.addEventListener('DOMContentLoaded', function() {
-        var elems = document.querySelectorAll('.sidenav');
-        var instances = M.Sidenav.init(elems,{});
-      });
-    
-    $(document).ready(function(){
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.sidenav');
+      var instances = M.Sidenav.init(elems, {});
+    });
+
+    $(document).ready(function () {
       $('.collapsible').collapsible();
     });
   </script>
-  
+
   <style>
     body {
-      font-family: 'Nunito Sans', sans-serif !important; /* common font */
+      font-family: 'Nunito Sans', sans-serif !important;
+      /* common font */
     }
-    .main-wrapper{
+
+    .main-wrapper {
       position: relative;
     }
 
-    .menu-holder{
+    .menu-holder {
       position: fixed;
       z-index: 50;
-    } 
+    }
 
-    .sidenav-overlay{
+    .sidenav-overlay {
       z-index: 0;
     }
 
     nav {
       color: white;
     }
-    @media only screen and (min-width: 993px){
+
+    @media only screen and (min-width: 993px) {
       nav a.sidenav-trigger {
-      display: block;
+        display: block;
       }
     }
-    
+
     .sidenav {
       line-height: 1rem;
     }
 
-    .sidenav li>a{
-        color: white;
+    .sidenav li>a {
+      color: white;
     }
 
-    .sidenav li>a>i.material-icons{
+    .sidenav li>a>i.material-icons {
       color: white;
     }
 
 
     ::-webkit-scrollbar {
-    display: none;
-  }
+      display: none;
+    }
 
-  /* Track */
-  ::-webkit-scrollbar-track {
-   display: none;
-  }
+    /* Track */
+    ::-webkit-scrollbar-track {
+      display: none;
+    }
 
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-       display: none;
-  }
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      display: none;
+    }
 
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    display: none;
-  }
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      display: none;
+    }
 
-.nav-links a {
-  font-family: 'Nunito Sans', sans-serif !important;
-  /* text-shadow: 0 0 10px #000b; */
-  font-size: 15px !important;
-  padding: 22px 0 10px 0 !important;
-  margin: 0 15px !important;
-  line-height: 100%;
-  text-transform: uppercase;
-}
-.nav-wrapper a:hover {
-  background-color: transparent !important;
-}
+    .nav-links a {
+      font-family: 'Nunito Sans', sans-serif !important;
+      /* text-shadow: 0 0 10px #000b; */
+      font-size: 15px !important;
+      padding: 22px 0 10px 0 !important;
+      margin: 0 15px !important;
+      line-height: 100%;
+      text-transform: uppercase;
+    }
 
-.un::after {
-content: '';
-width: 0px;
-height: 1.5px;
-display: block;
-background: #fff;
-margin-top: 4px;
-transition: 300ms;
-}
+    .nav-wrapper a:hover {
+      background-color: transparent !important;
+    }
 
-.un:hover::after {
-width: 100%;
-}
-  
-</style>
-  
-<div class="main-wrapper">
-  <div class="menu-holder" style="width:100%" id="menu">
-    <nav  class="transparent"  style="height: 4rem; box-shadow: none; background-color: #000 !important;"> 
-        <!-- navbar content here  --> 
+    .un::after {
+      content: '';
+      width: 0px;
+      height: 1.5px;
+      display: block;
+      background: #fff;
+      margin-top: 4px;
+      transition: 300ms;
+    }
+
+    .un:hover::after {
+      width: 100%;
+    }
+  </style>
+
+  <div class="main-wrapper">
+    <div class="menu-holder" style="width:100%" id="menu">
+      <nav class="transparent" style="height: 4rem; box-shadow: none; background-color: #000 !important;">
+        <!-- navbar content here  -->
         <div class="nav-wrapper">
-            <ul class="left">
-              <li><a href="#" class=" sidenav-trigger" data-target="slide_out" style="padding-top: 0rem;"><i class="material-icons" style="font-size:1.5rem;  color: white;">menu</i></a></li>
-            </ul>
-            <ul>
-              <li style="height: 5rem; width: 5rem;"><a href="index.html" style="height: 5rem; width: 7rem; transform: translate(0, 0.5rem);"><img src="./public/whitelogo3.png" alt="" style="margin-left: 0; height: 3rem;"></a></li>
-            </ul>
-            <ul class="hide-on-med-and-down right nav-links" style="padding-right: 12rem;">
-              <li><a href="solution.html" class="un">Solutions</a></li>
-              <li><a href="hangar.html" class="un">Hangar</a></li>
-              <li><a href="upcoming-projects.html" class="un">Upcoming Projects</a></li>
-              <li><a href="contact.html" class="un">Contact Us</a></li>
-            </ul>
+          <ul class="left">
+            <li><a href="#" class=" sidenav-trigger" data-target="slide_out" style="padding-top: 0rem;"><i
+                  class="material-icons" style="font-size:1.5rem;  color: white;">menu</i></a></li>
+          </ul>
+          <ul>
+            <li style="height: 5rem; width: 5rem;"><a href="index.html"
+                style="height: 5rem; width: 7rem; transform: translate(0, 0.5rem);"><img src="./public/whitelogo3.png"
+                  alt="" style="margin-left: 0; height: 3rem;"></a></li>
+          </ul>
+          <ul class="hide-on-med-and-down right nav-links" style="padding-right: 12rem;">
+            <li><a href="solution.html" class="un">Solutions</a></li>
+            <li><a href="hangar.html" class="un">Hangar</a></li>
+            <li><a href="upcoming-projects.html" class="un">Upcoming Projects</a></li>
+            <li><a href="contact.html" class="un">Contact Us</a></li>
+          </ul>
         </div>
-    </nav>
+      </nav>
 
-    <ul class="sidenav #000000 black" style="color:#eeeeee;" id="slide_out">
-      <!-- <li><a class="sidenav-close" href="#!"><i class="material-icons" style="font-size:2rem;">menu</i></a></li> -->
-      <li><a href="index.html" style="width:100%; height: 100%;"><img src="./public/whitelogo2.png" alt="" style="transform:scale(2); width:100%; height: 100%; margin-top: 36px;"></a></li>
-      <hr style="margin: 1rem 2.5rem 1rem 2rem;">
-      <li><a href="index.html" class="active hide-on-med-and-up"><i class="material-icons">home</i> Home</a></li>
-      <li><a href="about.html"><i class="material-icons">info</i> About Us</a></li>
-      <li><a href="hangar.html"><i class="material-icons">airplanemode_active</i> Hangar</a></li>
-      <li>
-        <ul class="collapsible" style="padding-left: 1rem;">
+      <ul class="sidenav #000000 black" style="color:#eeeeee;" id="slide_out">
+        <!-- <li><a class="sidenav-close" href="#!"><i class="material-icons" style="font-size:2rem;">menu</i></a></li> -->
+        <li><a href="index.html" style="width:100%; height: 100%;"><img src="./public/whitelogo2.png" alt=""
+              style="transform:scale(2); width:100%; height: 100%; margin-top: 36px;"></a></li>
+        <hr style="margin: 1rem 2.5rem 1rem 2rem;">
+        <li><a href="index.html" class="active hide-on-med-and-up"><i class="material-icons">home</i> Home</a></li>
+        <li><a href="about.html"><i class="material-icons">info</i> About Us</a></li>
+        <li><a href="hangar.html"><i class="material-icons">airplanemode_active</i> Hangar</a></li>
         <li>
-          <div class="collapsible-header"><i class="material-icons" style="margin-right: 1.8rem;">group</i> <b>Team</b></div>
-          <div class="collapsible-body"> 
-            <ul  style="background: black; padding-left: 4rem;">
-                <li><a href="mentors.html">Mentors</a></li>
-                <li><a href="curr-members.html">Current Members</a></li>
-                <li><a href="past-members.html">Past Members</a></li>
-            </ul>
-          </div>
+          <ul class="collapsible" style="padding-left: 1rem;">
+            <li>
+              <div class="collapsible-header"><i class="material-icons" style="margin-right: 1.8rem;">group</i>
+                <b>Team</b></div>
+              <div class="collapsible-body">
+                <ul style="background: black; padding-left: 4rem;">
+                  <li><a href="mentors.html">Mentors</a></li>
+                  <li><a href="curr-members.html">Current Members</a></li>
+                  <li><a href="past-members.html">Past Members</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
         </li>
-        </ul>
-      </li>
-      <li><a href="achievements.html"><i class="material-icons">emoji_events</i> Achievements</a></li>
-      <li><a href="upcoming_events.html" class="active"><i class="material-icons">home</i> Upcoming Events</a></li>
-      <li><a href="upcoming-projects.html" class="active"><i class="material-icons">precision_manufacturing</i> Upcoming Projects</a></li>
-      <li><a href="solution.html" class="active"><i class="material-icons">settings</i> Solutions</a></li>
-      <li><a href="contact.html"><i class="material-icons">email</i> Contact Us</a></li>
-    </ul>
-  </div>  
+        <li><a href="achievements.html"><i class="material-icons">emoji_events</i> Achievements</a></li>
+        <li><a href="upcoming_events.html" class="active"><i class="material-icons">home</i> Upcoming Events</a></li>
+        <li><a href="upcoming-projects.html" class="active"><i class="material-icons">precision_manufacturing</i>
+            Upcoming Projects</a></li>
+        <li><a href="solution.html" class="active"><i class="material-icons">settings</i> Solutions</a></li>
+        <li><a href="contact.html"><i class="material-icons">email</i> Contact Us</a></li>
+      </ul>
+    </div>
 
 
 
-<style>   
-    nav.transparent {
+    <style>
+      nav.transparent {
         position: fixed !important;
         top: 0;
         background-color: #000 !important;
-    }
+      }
 
-    .ctn{
+      .ctn {
         background-color: #f7f7f7;
         padding: 40px 15vw 10px 15vw;
         margin-top: 60px;
         margin-bottom: 0;
-    }
-    .row {
+      }
+
+      .row {
         border-color: #000;
         border-style: solid;
         border-width: 1px 0 0 0;
         padding: 2vw 0;
-    }
-    .ctn p{
+      }
+
+      .ctn p {
         font-weight: 500;
         font-family: 'DM Sans', sans-serif;
-    }
+      }
 
-    @media only screen and (max-width: 993px){
+      @media only screen and (max-width: 993px) {
         .img {
-            width: 100px !important;
-            padding: 10px !important;
-            margin-top: 10px;
+          width: 100px !important;
+          padding: 10px !important;
+          margin-top: 10px;
         }
-    }
-</style>
+      }
+    </style>
 
-<div class="main">
-    <div class="ctn">
+    <div class="main">
+      <div class="ctn">
         <h3 style="margin: 60px 0; font-family: 'Crete Round', sans-serif; text-align: center;">Achievements</h3>
         
-            <div class="row hide-on-med-only">
-                <p><img src="./public/uav-design.jpeg" class="col l4 s6 img" style="padding: 5px 7vw; color: #000;"></p>
-                <p class="col l3 s6" style="font-size: 20px; color: #555 !important;"><b>UAV Design Challenge PEC 2020</b></p>
-                <p class="col l5 s12" style="color: #777 !important;">Our team was successfully able to design and fabricate a Unconventional UAV which was able to meet the required criterion. Our team secured 1st position.</p>
-            </div>
-            <div class="row show-on-medium" style="display: none;">
-                <p><img src="./public/uav-design.jpeg" class="col l4 m4" style="padding: 10px 7vw; color: #000;"></p>
-                <p class="col l8 m8">
-                    <b style="color: #555;">UAV Design Challenge PEC 2020</b><br><br>
-                    <span style="color: #777 !important;">Our team was successfully able to design and fabricate a Unconventional UAV which was able to meet the required criterion. Our team secured 1st position.
-                    </span>
-                </p>
-            </div>
-        
-            <div class="row hide-on-med-only">
-                <p><img src="./public/iaf.png" class="col l4 s6 img" style="padding: 5px 7vw; color: #000;"></p>
-                <p class="col l3 s6" style="font-size: 20px; color: #555 !important;"><b>IAF Mehar Baba Prize 2019</b></p>
-                <p class="col l5 s12" style="color: #777 !important;">The team has qualified for Phase 3, securing a position amongst the Top 5 and Development Budget of INR 2.5 crores after beating giant UAV startups and companies.</p>
-            </div>
-            <div class="row show-on-medium" style="display: none;">
-                <p><img src="./public/iaf.png" class="col l4 m4" style="padding: 10px 7vw; color: #000;"></p>
-                <p class="col l8 m8">
-                    <b style="color: #555;">IAF Mehar Baba Prize 2019</b><br><br>
-                    <span style="color: #777 !important;">The team has qualified for Phase 3, securing a position amongst the Top 5 and Development Budget of INR 2.5 crores after beating giant UAV startups and companies.
-                    </span>
-                </p>
-            </div>
-        
-            <div class="row hide-on-med-only">
-                <p><img src="./public/logo/AeroIndia (without background).png" class="col l4 s6 img" style="padding: 5px 7vw; color: #000;"></p>
-                <p class="col l3 s6" style="font-size: 20px; color: #555 !important;"><b>Drone Olympics 2019</b></p>
-                <p class="col l5 s12" style="color: #777 !important;">The team ranked 1st in the Formation Flying category and was awarded a cash prize of Rs.5 Lakh</p>
-            </div>
-            <div class="row show-on-medium" style="display: none;">
-                <p><img src="./public/logo/AeroIndia (without background).png" class="col l4 m4" style="padding: 10px 7vw; color: #000;"></p>
-                <p class="col l8 m8">
-                    <b style="color: #555;">Drone Olympics 2019</b><br><br>
-                    <span style="color: #777 !important;">The team ranked 1st in the Formation Flying category and was awarded a cash prize of Rs.5 Lakh
-                    </span>
-                </p>
-            </div>
-        
-            <div class="row hide-on-med-only">
-                <p><img src="./public/suas-removebg2.png" class="col l4 s6 img" style="padding: 5px 7vw; color: #000;"></p>
-                <p class="col l3 s6" style="font-size: 20px; color: #555 !important;"><b>AUVSI SUAS 2018</b></p>
-                <p class="col l5 s12" style="color: #777 !important;">The team ranked 2nd in the Design amongst a total of 63 teams worldwide with a cash barrel of $1600.</p>
-            </div>
-            <div class="row show-on-medium" style="display: none;">
-                <p><img src="./public/suas-removebg2.png" class="col l4 m4" style="padding: 10px 7vw; color: #000;"></p>
-                <p class="col l8 m8">
-                    <b style="color: #555;">AUVSI SUAS 2018</b><br><br>
-                    <span style="color: #777 !important;">The team ranked 2nd in the Design amongst a total of 63 teams worldwide with a cash barrel of $1600.
-                    </span>
-                </p>
-            </div>
-        
-            <div class="row hide-on-med-only">
-                <p><img src="./public/transparents/sae-removebg.png" class="col l4 s6 img" style="padding: 5px 7vw; color: #000;"></p>
-                <p class="col l3 s6" style="font-size: 20px; color: #555 !important;"><b>SAE INDIA 2018</b></p>
-                <p class="col l5 s12" style="color: #777 !important;">The team secured 1st position overall in both Regular and Micro classes. The competition was held in the presence of officials from DRDO and ISRO.</p>
-            </div>
-            <div class="row show-on-medium" style="display: none;">
-                <p><img src="./public/transparents/sae-removebg.png" class="col l4 m4" style="padding: 10px 7vw; color: #000;"></p>
-                <p class="col l8 m8">
-                    <b style="color: #555;">SAE INDIA 2018</b><br><br>
-                    <span style="color: #777 !important;">The team secured 1st position overall in both Regular and Micro classes. The competition was held in the presence of officials from DRDO and ISRO.
-                    </span>
-                </p>
-            </div>
-        
-            <div class="row hide-on-med-only">
-                <p><img src="./public/transparents/sae-removebg.png" class="col l4 s6 img" style="padding: 5px 7vw; color: #000;"></p>
-                <p class="col l3 s6" style="font-size: 20px; color: #555 !important;"><b>SAE INDIA 2017</b></p>
-                <p class="col l5 s12" style="color: #777 !important;">In SAE INDIA Aero Design Challenge UAS DTU achieved 1st position in Regular Class. Also had best Technical Presenation.</p>
-            </div>
-            <div class="row show-on-medium" style="display: none;">
-                <p><img src="./public/transparents/sae-removebg.png" class="col l4 m4" style="padding: 10px 7vw; color: #000;"></p>
-                <p class="col l8 m8">
-                    <b style="color: #555;">SAE INDIA 2017</b><br><br>
-                    <span style="color: #777 !important;">In SAE INDIA Aero Design Challenge UAS DTU achieved 1st position in Regular Class. Also had best Technical Presenation.
-                    </span>
-                </p>
-            </div>
-        
-            <div class="row hide-on-med-only">
-                <p><img src="./public/logo/tata (without background).png" class="col l4 s6 img" style="padding: 5px 7vw; color: #000;"></p>
-                <p class="col l3 s6" style="font-size: 20px; color: #555 !important;"><b>TATA UAV Launchpad</b></p>
-                <p class="col l5 s12" style="color: #777 !important;">UAS DTU achieved 2nd position.</p>
-            </div>
-            <div class="row show-on-medium" style="display: none;">
-                <p><img src="./public/logo/tata (without background).png" class="col l4 m4" style="padding: 10px 7vw; color: #000;"></p>
-                <p class="col l8 m8">
-                    <b style="color: #555;">TATA UAV Launchpad</b><br><br>
-                    <span style="color: #777 !important;">UAS DTU achieved 2nd position.
-                    </span>
-                </p>
-            </div>
-        
-            <div class="row hide-on-med-only">
-                <p><img src="./public/logo/flytron.jpg" class="col l4 s6 img" style="padding: 5px 7vw; color: #000;"></p>
-                <p class="col l3 s6" style="font-size: 20px; color: #555 !important;"><b>UAV Flytron</b></p>
-                <p class="col l5 s12" style="color: #777 !important;">Team UAS-DTU won the third prize in UAV Flytron organized by PEC, Chandigarh on 25-26 February 2017. The team was awarded a cash prize of Rs. 40000.</p>
-            </div>
-            <div class="row show-on-medium" style="display: none;">
-                <p><img src="./public/logo/flytron.jpg" class="col l4 m4" style="padding: 10px 7vw; color: #000;"></p>
-                <p class="col l8 m8">
-                    <b style="color: #555;">UAV Flytron</b><br><br>
-                    <span style="color: #777 !important;">Team UAS-DTU won the third prize in UAV Flytron organized by PEC, Chandigarh on 25-26 February 2017. The team was awarded a cash prize of Rs. 40000.
-                    </span>
-                </p>
-            </div>
-        
-    </div>
-</div>
-
-<script>
-    document.title = "Achievements • UAS-DTU";
-</script>
-
-<section id="footer">
-<style>
-    .logos a>i{
-        padding-right: 0.4rem;
-    }
-    #contact .col{
-        padding-right: 2rem;
-        color:#cccccc;
-    }
-    #contact .map{
-        text-align: left;
-    }
-
-    #contact .row{
-        margin-bottom: 0;
-    }
-    .logos a{
-         color:grey
-    }
-
-     @media only screen and (min-width:800px){
-        .row #g_map{
-        padding-left: 3vw; 
-        padding-right: 3vw;
-   }
-     }    
-</style>
-<div id="contact" style="padding: 0 4rem 0 4rem; background:black; position: relative;">
-    <div class="row">
-                <div class="col l3 m12 s12">
-                    <h4 style="white-space: nowrap;">UAS-DTU</h4>
-                    <p class="text">A team of enthusiastic undergraduates, working to providing the solutions for urban surveillance needs. </p>
-                        <div class="logos">
-                            <a href="https://www.facebook.com/uas.dtu/" target="blank"><i class="fab fa-facebook-square fa-2x"></i></a>
-                            <a href="https://in.linkedin.com/company/uas-dtu" target="blank"><i class="fab fa-linkedin fa-2x"></i></i></a>
-                            <a href="https://www.youtube.com/channel/UCmOV4uiBHoHzf5ZrE1z6WQg" target="blank"><i class="fab fa-youtube fa-2x"></i></a>
-                            <a href="https://www.instagram.com/uasdtu/" target="blank"><i class="fab fa-instagram fa-2x"></i></i></a>
-                        </div>
-                </div>
-               
-                <div class="col l6 m12 s12" id="g_map">
-                    <h4 class="map">Map help:</h4>
-                    <div style="overflow: hidden;">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3498.027403024808!2d77.11499645105123!3d28.748598782285452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d01270184b37d%3A0x31d84edc5468f356!2sUAS+DTU!5e0!3m2!1sen!2sin!4v1516991611933" frameborder="0" style="border:0; width:35rem;height:10.5rem;" ></iframe>
-                    </div>
-                        
-                </div>
-                 
-                <div class="col l3 m12 s12">
-                    <h4>Reach us at:</h4>
-                    <p class="text">LW2FF1, Delhi Technological University, Delhi - 110042</p>
-                    <p id="phone1"><i class="fas fa-phone-alt"></i> +91-8800712060</p>
-                    <p><i class="fas fa-phone-alt"></i> +91-90056 12479</p>
-                    <p><i class="fas fa-envelope"></i> uas.dce@gmail.com</p>
-                </div>
-            </div>
+        <div class="row hide-on-med-only">
+          <p><img src="./public/suas-removebg2.png" class="col l4 s6 img" style="padding: 5px 7vw; color: #000;"></p>
+          <p class="col l3 s6" style="font-size: 20px; color: #555 !important;"><b>AUVSI SUAS 2022</b></p>
+          <p class="col l5 s12" style="color: #777 !important;">The team ranked 3rd in Technical Design and 5th in Flight Readiness Review amongst a total of 71 teams worldwide. 
+          </p>
         </div>
-        
+        <div class="row show-on-medium" style="display: none;">
+          <p><img src="./public/suas-removebg2.png" class="col l4 m4" style="padding: 10px 7vw; color: #000;"></p>
+          <p class="col l8 m8">
+            <b style="color: #555;">AUVSI SUAS 2022</b><br><br>
+            <span style="color: #777 !important;">The team ranked 3rd in Technical Design and 5th in Flight Readiness Review amongst a total of 71 teams worldwide. 
+            </span>
+          </p>
+        </div>
+        <div class="row hide-on-med-only">
+          <p><img src="./public/iaf.png" class="col l4 s6 img" style="padding: 5px 7vw; color: #000;"></p>
+          <p class="col l3 s6" style="font-size: 20px; color: #555 !important;"><b>IAF Mehar Baba Swarm Drone Competition</b></p>
+          <p class="col l5 s12" style="color: #777 !important;">The team was Co-Winner of first prize in the competition and was given the title of "Best Communication Architecure". Our team successfully demonstrated a swarm of 25 drones in Pokhran over a range of 50 kms.
+          </p>
+        </div>
+        <div class="row show-on-medium" style="display: none;">
+          <p><img src="./public/iaf.png" class="col l4 m4" style="padding: 10px 7vw; color: #000;"></p>
+          <p class="col l8 m8">
+            <b style="color: #555;">IAF Mehar Baba Prize 2019</b><br><br>
+            <span style="color: #777 !important;">The team was Co-Winner of first prize in the competition and was given the title of "Best Communication Architecure". Our team successfully demonstrated a swarm of 25 drones in Pokhran over a range of 50 kms.
+            </span>
+          </p>
+        </div>
+        <div class="row hide-on-med-only">
+          <p><img src="./public/uav-design.jpeg" class="col l4 s6 img" style="padding: 5px 7vw; color: #000;"></p>
+          <p class="col l3 s6" style="font-size: 20px; color: #555 !important;"><b>UAV Design Challenge PEC 2020</b></p>
+          <p class="col l5 s12" style="color: #777 !important;">Our team was successfully able to design and fabricate a
+            Unconventional UAV which was able to meet the required criterion. Our team secured 1st position.</p>
+        </div>
+        <div class="row show-on-medium" style="display: none;">
+          <p><img src="./public/uav-design.jpeg" class="col l4 m4" style="padding: 10px 7vw; color: #000;"></p>
+          <p class="col l8 m8">
+            <b style="color: #555;">UAV Design Challenge PEC 2020</b><br><br>
+            <span style="color: #777 !important;">Our team was successfully able to design and fabricate a
+              Unconventional UAV which was able to meet the required criterion. Our team secured 1st position.
+            </span>
+          </p>
+        </div>
+
+        <div class="row hide-on-med-only">
+          <p><img src="./public/logo/AeroIndia (without background).png" class="col l4 s6 img"
+              style="padding: 5px 7vw; color: #000;"></p>
+          <p class="col l3 s6" style="font-size: 20px; color: #555 !important;"><b>Drone Olympics 2019</b></p>
+          <p class="col l5 s12" style="color: #777 !important;">The team ranked 1st in the Formation Flying category and
+            was awarded a cash prize of Rs.5 Lakh</p>
+        </div>
+        <div class="row show-on-medium" style="display: none;">
+          <p><img src="./public/logo/AeroIndia (without background).png" class="col l4 m4"
+              style="padding: 10px 7vw; color: #000;"></p>
+          <p class="col l8 m8">
+            <b style="color: #555;">Drone Olympics 2019</b><br><br>
+            <span style="color: #777 !important;">The team ranked 1st in the Formation Flying category and was awarded a
+              cash prize of Rs.5 Lakh
+            </span>
+          </p>
+        </div>
+
+        <div class="row hide-on-med-only">
+          <p><img src="./public/suas-removebg2.png" class="col l4 s6 img" style="padding: 5px 7vw; color: #000;"></p>
+          <p class="col l3 s6" style="font-size: 20px; color: #555 !important;"><b>AUVSI SUAS 2018</b></p>
+          <p class="col l5 s12" style="color: #777 !important;">The team ranked 2nd in the Design amongst a total of 63
+            teams worldwide with a cash barrel of $1600.</p>
+        </div>
+        <div class="row show-on-medium" style="display: none;">
+          <p><img src="./public/suas-removebg2.png" class="col l4 m4" style="padding: 10px 7vw; color: #000;"></p>
+          <p class="col l8 m8">
+            <b style="color: #555;">AUVSI SUAS 2018</b><br><br>
+            <span style="color: #777 !important;">The team ranked 2nd in the Design amongst a total of 63 teams
+              worldwide with a cash barrel of $1600.
+            </span>
+          </p>
+        </div>
+
+        <div class="row hide-on-med-only">
+          <p><img src="./public/transparents/sae-removebg.png" class="col l4 s6 img"
+              style="padding: 5px 7vw; color: #000;"></p>
+          <p class="col l3 s6" style="font-size: 20px; color: #555 !important;"><b>SAE INDIA 2018</b></p>
+          <p class="col l5 s12" style="color: #777 !important;">The team secured 1st position overall in both Regular
+            and Micro classes. The competition was held in the presence of officials from DRDO and ISRO.</p>
+        </div>
+        <div class="row show-on-medium" style="display: none;">
+          <p><img src="./public/transparents/sae-removebg.png" class="col l4 m4"
+              style="padding: 10px 7vw; color: #000;"></p>
+          <p class="col l8 m8">
+            <b style="color: #555;">SAE INDIA 2018</b><br><br>
+            <span style="color: #777 !important;">The team secured 1st position overall in both Regular and Micro
+              classes. The competition was held in the presence of officials from DRDO and ISRO.
+            </span>
+          </p>
+        </div>
+
+        <div class="row hide-on-med-only">
+          <p><img src="./public/transparents/sae-removebg.png" class="col l4 s6 img"
+              style="padding: 5px 7vw; color: #000;"></p>
+          <p class="col l3 s6" style="font-size: 20px; color: #555 !important;"><b>SAE INDIA 2017</b></p>
+          <p class="col l5 s12" style="color: #777 !important;">In SAE INDIA Aero Design Challenge UAS DTU achieved 1st
+            position in Regular Class. Also had best Technical Presenation.</p>
+        </div>
+        <div class="row show-on-medium" style="display: none;">
+          <p><img src="./public/transparents/sae-removebg.png" class="col l4 m4"
+              style="padding: 10px 7vw; color: #000;"></p>
+          <p class="col l8 m8">
+            <b style="color: #555;">SAE INDIA 2017</b><br><br>
+            <span style="color: #777 !important;">In SAE INDIA Aero Design Challenge UAS DTU achieved 1st position in
+              Regular Class. Also had best Technical Presenation.
+            </span>
+          </p>
+        </div>
+
+        <div class="row hide-on-med-only">
+          <p><img src="./public/logo/tata (without background).png" class="col l4 s6 img"
+              style="padding: 5px 7vw; color: #000;"></p>
+          <p class="col l3 s6" style="font-size: 20px; color: #555 !important;"><b>TATA UAV Launchpad</b></p>
+          <p class="col l5 s12" style="color: #777 !important;">UAS DTU achieved 2nd position.</p>
+        </div>
+        <div class="row show-on-medium" style="display: none;">
+          <p><img src="./public/logo/tata (without background).png" class="col l4 m4"
+              style="padding: 10px 7vw; color: #000;"></p>
+          <p class="col l8 m8">
+            <b style="color: #555;">TATA UAV Launchpad</b><br><br>
+            <span style="color: #777 !important;">UAS DTU achieved 2nd position.
+            </span>
+          </p>
+        </div>
+
+        <div class="row hide-on-med-only">
+          <p><img src="./public/logo/flytron.jpg" class="col l4 s6 img" style="padding: 5px 7vw; color: #000;"></p>
+          <p class="col l3 s6" style="font-size: 20px; color: #555 !important;"><b>UAV Flytron</b></p>
+          <p class="col l5 s12" style="color: #777 !important;">Team UAS-DTU won the third prize in UAV Flytron
+            organized by PEC, Chandigarh on 25-26 February 2017. The team was awarded a cash prize of Rs. 40000.</p>
+        </div>
+        <div class="row show-on-medium" style="display: none;">
+          <p><img src="./public/logo/flytron.jpg" class="col l4 m4" style="padding: 10px 7vw; color: #000;"></p>
+          <p class="col l8 m8">
+            <b style="color: #555;">UAV Flytron</b><br><br>
+            <span style="color: #777 !important;">Team UAS-DTU won the third prize in UAV Flytron organized by PEC,
+              Chandigarh on 25-26 February 2017. The team was awarded a cash prize of Rs. 40000.
+            </span>
+          </p>
+        </div>
+
+      </div>
     </div>
-    </section>    
-</div>
+
+    <script>
+      document.title = "Achievements • UAS-DTU";
+    </script>
+
+    <section id="footer">
+      <style>
+        .logos a>i {
+          padding-right: 0.4rem;
+        }
+
+        #contact .col {
+          padding-right: 2rem;
+          color: #cccccc;
+        }
+
+        #contact .map {
+          text-align: left;
+        }
+
+        #contact .row {
+          margin-bottom: 0;
+        }
+
+        .logos a {
+          color: grey
+        }
+
+        @media only screen and (min-width:800px) {
+          .row #g_map {
+            padding-left: 3vw;
+            padding-right: 3vw;
+          }
+        }
+      </style>
+      <div id="contact" style="padding: 0 4rem 0 4rem; background:black; position: relative;">
+        <div class="row">
+          <div class="col l3 m12 s12">
+            <h4 style="white-space: nowrap;">UAS-DTU</h4>
+            <p class="text">A team of enthusiastic undergraduates, working to providing the solutions for urban
+              surveillance needs. </p>
+            <div class="logos">
+              <a href="https://www.facebook.com/uas.dtu/" target="blank"><i
+                  class="fab fa-facebook-square fa-2x"></i></a>
+              <a href="https://in.linkedin.com/company/uas-dtu" target="blank"><i
+                  class="fab fa-linkedin fa-2x"></i></i></a>
+              <a href="https://www.youtube.com/channel/UCmOV4uiBHoHzf5ZrE1z6WQg" target="blank"><i
+                  class="fab fa-youtube fa-2x"></i></a>
+              <a href="https://www.instagram.com/uasdtu/" target="blank"><i class="fab fa-instagram fa-2x"></i></i></a>
+            </div>
+          </div>
+
+          <div class="col l6 m12 s12" id="g_map">
+            <h4 class="map">Map help:</h4>
+            <div style="overflow: hidden;">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3498.027403024808!2d77.11499645105123!3d28.748598782285452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d01270184b37d%3A0x31d84edc5468f356!2sUAS+DTU!5e0!3m2!1sen!2sin!4v1516991611933"
+                frameborder="0" style="border:0; width:35rem;height:10.5rem;"></iframe>
+            </div>
+
+          </div>
+
+          <div class="col l3 m12 s12">
+            <h4>Reach us at:</h4>
+            <p class="text">LW2FF1, Delhi Technological University, Delhi - 110042</p>
+            <p id="phone1"><i class="fas fa-phone-alt"></i> +91-8800712060</p>
+            <p><i class="fas fa-phone-alt"></i> +91-90056 12479</p>
+            <p><i class="fas fa-envelope"></i> uas.dce@gmail.com</p>
+          </div>
+        </div>
+      </div>
+
+  </div>
+  </section>
+  </div>
 </body>
+
 </html>
