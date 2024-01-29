@@ -1,522 +1,570 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home • UAS-DTU</title>
-    <link href="./public/public/favicon-32x32.png" rel="shortcut icon" type="image/png">
-    <link rel="stylesheet" href="public/materialize/css/materialize.css">
-    <script src="public/jquery.min.js"></script>
-    <script src="public/materialize/js/materialize.js"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Crete+Round:ital@1&display=swap" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&display=swap" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Crete+Round&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Tinos&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Karma:wght@300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
-    <link href="public/aos-master/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="public/fullPage.js-master/dist/fullpage.css">
-    <script src="public/fullPage.js-master/dist/fullpage.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FKKZ2KYGD0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-FKKZ2KYGD0');
-</script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home • UAS-DTU</title>
+  <link href="./public/public/favicon-32x32.png" rel="shortcut icon" type="image/png">
+  <link rel="stylesheet" href="public/materialize/css/materialize.css">
+  <script src="public/jquery.min.js"></script>
+  <script src="public/materialize/js/materialize.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Crete+Round:ital@1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crete+Round&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tinos&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Karma:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+  <link href="public/aos-master/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="public/fullPage.js-master/dist/fullpage.css">
+  <script src="public/fullPage.js-master/dist/fullpage.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FKKZ2KYGD0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-FKKZ2KYGD0');
+  </script>
 </head>
 
 <body>
-  
-<style>
-  .loader{
-    position:fixed;
-    top:0;
-    left:0;
-    z-index: 99;
-    width:100%;
-    height: 100%;
-    background-color: #ebebeb;
-    text-align: center;
-  }
 
-#fp-nav{
-  z-index: 80 !important;
-}
+  <style>
+    .loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 99;
+      width: 100%;
+      height: 100%;
+      background-color: #ebebeb;
+      text-align: center;
+    }
+
+    #fp-nav {
+      z-index: 80 !important;
+    }
 
 
-@media only screen and (min-width: 600px){
-.loader>img{
-    width: 30vw;
-    margin-top: 25vh;
-    margin-right: 7vw;
-  }
-}
+    @media only screen and (min-width: 600px) {
+      .loader>img {
+        width: 30vw;
+        margin-top: 25vh;
+        margin-right: 7vw;
+      }
+    }
 
-@media only screen and (max-width: 600px){
-.loader>img{
-    width: 60vw;
-    margin-top: 25vh;
-    margin-right: 7vw;
-  }
-}
+    @media only screen and (max-width: 600px) {
+      .loader>img {
+        width: 60vw;
+        margin-top: 25vh;
+        margin-right: 7vw;
+      }
+    }
 
-.hidden{
-animation:fadeOut 1s;
-animation-fill-mode: forwards;
-}
+    .hidden {
+      animation: fadeOut 1s;
+      animation-fill-mode: forwards;
+    }
 
-@keyframes fadeOut{
-100%{
-  opacity:0;
-  visibility: hidden;
-}
-}
-
-</style>
-<div class="loader">
-  <img src="./public/l.png" alt="">
-  <div class="preloader-wrapper active" style="display: block; margin:2vh auto;">
-    <div class="spinner-layer spinner-blue-only">
-      <div class="circle-clipper left">
-        <div class="circle"></div>
-      </div><div class="gap-patch">
-        <div class="circle"></div>
-      </div><div class="circle-clipper right">
-        <div class="circle"></div>
+    @keyframes fadeOut {
+      100% {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+  </style>
+  <div class="loader">
+    <img src="./public/l.png" alt="">
+    <div class="preloader-wrapper active" style="display: block; margin:2vh auto;">
+      <div class="spinner-layer spinner-blue-only">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div>
+        <div class="gap-patch">
+          <div class="circle"></div>
+        </div>
+        <div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<script>
-  window.addEventListener("load",function(){
-    const loader = document.querySelector(".loader");
+  <script>
+    window.addEventListener("load", function () {
+      const loader = document.querySelector(".loader");
 
-    loader.className += " hidden";
-  });
-</script>
-
+      loader.className += " hidden";
+    });
+  </script>
 
 
-  <script>    
-    document.addEventListener('DOMContentLoaded', function() {
-        var elems = document.querySelectorAll('.sidenav');
-        var instances = M.Sidenav.init(elems,{});
-      });
-    
-    $(document).ready(function(){
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.sidenav');
+      var instances = M.Sidenav.init(elems, {});
+    });
+
+    $(document).ready(function () {
       $('.collapsible').collapsible();
     });
   </script>
-  
+
   <style>
     body {
-      font-family: 'Nunito Sans', sans-serif !important; /* common font */
+      font-family: 'Nunito Sans', sans-serif !important;
+      /* common font */
     }
-    .main-wrapper{
+
+    .main-wrapper {
       position: relative;
     }
 
-    .menu-holder{
+    .menu-holder {
       position: fixed;
       z-index: 50;
-    } 
+    }
 
-    .sidenav-overlay{
+    .sidenav-overlay {
       z-index: 0;
     }
 
     nav {
       color: white;
     }
-    @media only screen and (min-width: 993px){
+
+    @media only screen and (min-width: 993px) {
       nav a.sidenav-trigger {
-      display: block;
+        display: block;
       }
     }
-    
+
     .sidenav {
       line-height: 1rem;
     }
 
-    .sidenav li>a{
-        color: white;
+    .sidenav li>a {
+      color: white;
     }
 
-    .sidenav li>a>i.material-icons{
+    .sidenav li>a>i.material-icons {
       color: white;
     }
 
 
     ::-webkit-scrollbar {
-    display: none;
-  }
+      display: none;
+    }
 
-  /* Track */
-  ::-webkit-scrollbar-track {
-   display: none;
-  }
+    /* Track */
+    ::-webkit-scrollbar-track {
+      display: none;
+    }
 
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-       display: none;
-  }
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      display: none;
+    }
 
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    display: none;
-  }
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      display: none;
+    }
 
-.nav-links a {
-  font-family: 'Nunito Sans', sans-serif !important;
-  /* text-shadow: 0 0 10px #000b; */
-  font-size: 15px !important;
-  padding: 22px 0 10px 0 !important;
-  margin: 0 15px !important;
-  line-height: 100%;
-  text-transform: uppercase;
-}
-.nav-wrapper a:hover {
-  background-color: transparent !important;
-}
+    .nav-links a {
+      font-family: 'Nunito Sans', sans-serif !important;
+      /* text-shadow: 0 0 10px #000b; */
+      font-size: 15px !important;
+      padding: 22px 0 10px 0 !important;
+      margin: 0 15px !important;
+      line-height: 100%;
+      text-transform: uppercase;
+    }
 
-.un::after {
-content: '';
-width: 0px;
-height: 1.5px;
-display: block;
-background: #fff;
-margin-top: 4px;
-transition: 300ms;
-}
+    .nav-wrapper a:hover {
+      background-color: transparent !important;
+    }
 
-.un:hover::after {
-width: 100%;
-}
-  
+    .un::after {
+      content: '';
+      width: 0px;
+      height: 1.5px;
+      display: block;
+      background: #fff;
+      margin-top: 4px;
+      transition: 300ms;
+    }
+
+    .un:hover::after {
+      width: 100%;
+    }
   </style>
-  
+
   <div class="main-wrapper">
     <div class="menu-holder" style="width:100%" id="menu">
-      <nav  class="transparent"  style="height: 4rem; box-shadow: none; background-color: #000 !important;"> 
-          <!-- navbar content here  --> 
-          <div class="nav-wrapper">
-              <ul class="left">
-                <li><a href="#" class=" sidenav-trigger" data-target="slide_out" style="padding-top: 0rem;"><i class="material-icons" style="font-size:1.5rem;  color: white;">menu</i></a></li>
-              </ul>
-              <ul>
-                <li style="height: 5rem; width: 5rem;"><a href="index.html" style="height: 5rem; width: 7rem; transform: translate(0, 0.5rem);"><img src="./public/whitelogo3.png" alt="" style="margin-left: 0; height: 3rem;"></a></li>
-              </ul>
-              <ul class="hide-on-med-and-down right nav-links" style="padding-right: 12rem;">
-                <li><a href="solution.html" class="un">Solutions</a></li>
-                <li><a href="hangar.html" class="un">Hangar</a></li>
-                <li><a href="upcoming-projects.html" class="un">Upcoming Projects</a></li>
-                <li><a href="contact.html" class="un">Contact Us</a></li>
-              </ul>
-          </div>
+      <nav class="transparent" style="height: 4rem; box-shadow: none; background-color: #000 !important;">
+        <!-- navbar content here  -->
+        <div class="nav-wrapper">
+          <ul class="left">
+            <li><a href="#" class=" sidenav-trigger" data-target="slide_out" style="padding-top: 0rem;"><i
+                  class="material-icons" style="font-size:1.5rem;  color: white;">menu</i></a></li>
+          </ul>
+          <ul>
+            <li style="height: 5rem; width: 5rem;"><a href="index.html"
+                style="height: 5rem; width: 7rem; transform: translate(0, 0.5rem);"><img src="./public/whitelogo3.png"
+                  alt="" style="margin-left: 0; height: 3rem;"></a></li>
+          </ul>
+          <ul class="hide-on-med-and-down right nav-links" style="padding-right: 12rem;">
+            <li><a href="solution.html" class="un">Solutions</a></li>
+            <li><a href="hangar.html" class="un">Hangar</a></li>
+            <li><a href="upcoming-projects.html" class="un">Upcoming Projects</a></li>
+            <li><a href="contact.html" class="un">Contact Us</a></li>
+          </ul>
+        </div>
       </nav>
-  
+
       <ul class="sidenav #000000 black" style="color:#eeeeee;" id="slide_out">
         <!-- <li><a class="sidenav-close" href="#!"><i class="material-icons" style="font-size:2rem;">menu</i></a></li> -->
-        <li><a href="index.html" style="width:100%; height: 100%;"><img src="./public/whitelogo2.png" alt="" style="transform:scale(2); width:100%; height: 100%; margin-top: 36px;"></a></li>
+        <li><a href="index.html" style="width:100%; height: 100%;"><img src="./public/whitelogo2.png" alt=""
+              style="transform:scale(2); width:100%; height: 100%; margin-top: 36px;"></a></li>
         <hr style="margin: 1rem 2.5rem 1rem 2rem;">
         <li><a href="index.html" class="active hide-on-med-and-up"><i class="material-icons">home</i> Home</a></li>
         <li><a href="about.html"><i class="material-icons">info</i> About Us</a></li>
         <li><a href="hangar.html"><i class="material-icons">airplanemode_active</i> Hangar</a></li>
         <li>
           <ul class="collapsible" style="padding-left: 1rem;">
-          <li>
-            <div class="collapsible-header"><i class="material-icons" style="margin-right: 1.8rem;">group</i> <b>Team</b></div>
-            <div class="collapsible-body"> 
-              <ul  style="background: black; padding-left: 4rem;">
+            <li>
+              <div class="collapsible-header"><i class="material-icons" style="margin-right: 1.8rem;">group</i>
+                <b>Team</b>
+              </div>
+              <div class="collapsible-body">
+                <ul style="background: black; padding-left: 4rem;">
                   <li><a href="mentors.html">Mentors</a></li>
                   <li><a href="curr-members.html">Current Members</a></li>
                   <li><a href="past-members.html">Past Members</a></li>
-              </ul>
-            </div>
-          </li>
+                </ul>
+              </div>
+            </li>
           </ul>
         </li>
         <li><a href="achievements.html"><i class="material-icons">emoji_events</i> Achievements</a></li>
         <li><a href="upcoming_events.html" class="active"><i class="material-icons">home</i> Upcoming Events</a></li>
-        <li><a href="upcoming-projects.html" class="active"><i class="material-icons">precision_manufacturing</i> Upcoming Projects</a></li>
+        <li><a href="upcoming-projects.html" class="active"><i class="material-icons">precision_manufacturing</i>
+            Upcoming Projects</a></li>
         <li><a href="solution.html" class="active"><i class="material-icons">settings</i> Solutions</a></li>
         <li><a href="contact.html"><i class="material-icons">email</i> Contact Us</a></li>
       </ul>
-    </div>  
-  
+    </div>
 
 
 
-<style>
-    nav.transparent{
-        position:fixed !important;
+
+    <style>
+      nav.transparent {
+        position: fixed !important;
         background-color: black !important;
-        top:0;
-    }
+        top: 0;
+      }
 
-    #row1{
+      #row1 {
         padding-top: 7rem;
-    }
+      }
 
-    .card .card-image{
+      .card .card-image {
         text-align: center;
-    }
+      }
 
-    .card .card-image img{
+      .card .card-image img {
         display: inline-block;
-        width:80%;
+        width: 80%;
         height: 80%;
-    }
+      }
 
-    .bg_row{
+      .bg_row {
         background-image: url("./public/road-wallpapers-40500-5655548.jpg");
         background-position: center;
         background-size: cover;
-    }
+      }
 
-    .card{
+      .card {
         background-color: transparent;
         box-shadow: none !important;
-    }
+      }
 
-    
-    #row2{
+
+      #row2 {
         text-align: center;
         padding-top: 2rem;
-    }
+      }
 
-    #col5 .card{
+      #col5 .card {
         padding-right: 5rem;
         padding-left: 4rem;
-    }
+      }
 
-    .card .card-title{
+      .card .card-title {
         text-align: center;
         font-weight: 500;
         color: white;
-    }
+      }
 
-    .card .card-content{
+      .card .card-content {
         text-align: justify;
         font-family: 'Karma', serif;
         font-weight: 500;
         text-shadow: 0 0 4px #000;
         color: #fff;
-    }
+      }
 
-    /* .card-image {
+      /* .card-image {
         background-color: #ffffff44;
     } */
 
-    /* .card .card-image {
+      /* .card .card-image {
         border: 1px solid white;
     }
     .col{
         border: 1px solid white;
     } */
-    @media only screen and (min-width: 600px){
-        #col4 .card{
-        padding-left: 8rem;
-        padding-right: 2rem;
+      @media only screen and (min-width: 600px) {
+        #col4 .card {
+          padding-left: 8rem;
+          padding-right: 2rem;
         }
 
-        
-        #col5 .card{
-            padding-right: 5rem;
-            padding-left: 4rem;
+
+        #col5 .card {
+          padding-right: 5rem;
+          padding-left: 4rem;
         }
 
-        
-        .bg_row .row{
-            margin: 0 4rem 0rem 4rem;
+
+        .bg_row .row {
+          margin: 0 4rem 0rem 4rem;
         }
 
-        .row #col1{
-        padding-top: 12.8rem;
+        .row #col1 {
+          padding-top: 12.8rem;
         }
 
-        .row #col3{
-            padding-top: 12rem;
+        .row #col3 {
+          padding-top: 12rem;
         }
-    }
+      }
 
-    @media only screen and (max-width: 600px){
-        #col4 .card{
-        padding-left: 0rem;
-        padding-right: 0rem;
-        }
-
-        
-        #col5 .card{
-            padding-right: 0rem;
-            padding-left: 0rem;
+      @media only screen and (max-width: 600px) {
+        #col4 .card {
+          padding-left: 0rem;
+          padding-right: 0rem;
         }
 
-        
-        .bg_row .row{
-            margin: 0 2vw 0rem 2vw;
+
+        #col5 .card {
+          padding-right: 0rem;
+          padding-left: 0rem;
         }
 
-        .bg_row .row .col{
-            padding-top: 4vh !important;
+
+        .bg_row .row {
+          margin: 0 2vw 0rem 2vw;
         }
-        
-    }
-</style>
 
-<div class="bg_row">
-    <div class="row" id="row1">
-        <div class="col l4 s12 m7" id = "col1">
-            <div class="card">
-                <div class="card-image">
-                <img src="./public/transparents/mbzirc.png">
-                </div>
-                <div class="card-title">
-                    Mohamed Bin Zayed International Robotics Challenge 2023
-                </div>
-                <div class="card-content">
-                <p>Considered one of the biggest Robotics competition in the world, the team aims to participate in the 2023 edition of MBZIRC. Multiple problem statements mirroring real life applications of collaborative robots in crop health monitoring and harvesting, healthcare and other similar scenarios. The team is working on developing robust rovers, robotic arms and collaborative robotics solutions for the same.</p>
-                </div>
-            </div>
-        </div>
+        .bg_row .row .col {
+          padding-top: 4vh !important;
+        }
 
+      }
+    </style>
+
+    <div class="bg_row">
+      <div class="row" id="row1">
+        <a href="https://suas-competition.org/">
         <div class="col l4 s12 m7" id="col2">
-            <div class="card">
+          <div class="card">
             <div class="card-image">
-                <img src="./public/iaf.png">
+              <img src="./public/transparents/suas-removebg.png">
             </div>
             <div class="card-title">
-                Mehar Baba Prize Phase 3
+              SUAS 2024
             </div>
             <div class="card-content">
-            <p>Development of a system of Collaborative UAVs equipped with appropriate software (e.g. artificial intelligence, swarm intelligence etc.) and hardware (e.g. multiple sensors, high payload carrying capacity etc.) to create better HADR capabilities and help the IAF envisage a future of humanitarian response in a far more able manner.</p>
+              <p>The team will continue to participate in the latest edition of AUVSI SUAS, having first done so in
+                2009. The competition, held annually in Maryland, USA, includes development of an aerial system with
+                imaging, target identification and payload drop capabilities.</p>
             </div>
-            </div>
+          </div>
         </div>
+      </a>
 
-        <div class="col l4 s12 m7" id="col3">
+        <a href="https://www.mbzirc.com/">
+          <div class="col l4 s12 m7" id="col2">
             <div class="card">
+              <div class="card-image">
+                <img src="./public/transparents/mbzirc.png">
+              </div>
+              <div class="card-title">
+                Mohamed Bin Zayed International Robotics Challenge
+              </div>
+              <div class="card-content">
+                <p>Considered one of the biggest Robotics competition in the world. Multiple problem statements
+                  mirroring
+                  real life applications of collaborative robots in crop health monitoring and harvesting, healthcare
+                  and
+                  other similar scenarios. The team is working on developing robust rovers, robotic arms and
+                  collaborative
+                  robotics solutions for the same.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://triagechallenge.darpa.mil/">
+        <div class="col l4 s12 m7" id="col2">
+          <div class="card">
             <div class="card-image">
-                <img src="./public/transparents/outback-removebg.png">
+              <img src="./public/DTC-removebg-preview.png">
             </div>
             <div class="card-title">
-                Medical Rescue Challenge 2021
+              DARPA Triage Challenge
             </div>
             <div class="card-content">
-                <p>The team aims to participate in UAV Medical Rescue Challenge also known as the Outback Challenge, held in Australia in 2021. The goal of the competition is to demonstrate the utility of Unmanned Airborne Vehicles (UAVs) for civilian applications, particularly in those applications that will save the lives of people. The competition requires the team to develop a UAV and deployable UGV system with human detection, payload delivery and live audio-video streaming capabilities.
-                </p>
+              <p>The team aims to participate in DARPA Triage Challenge, organized by United States Department of
+                Defense. The goal of the competition is to drive breakthrough innovations in identification of
+                “signatures” of injury that will help medical responders perform scalable, timely, and accurate triage.
+              </p>
             </div>
-            </div>
+          </div>
         </div>
+      </a>
 
+
+      </div>
+      <a href="https://www.sae.org/attend/student-events">
+      <div class="row" id="row2">
+        <div class="col l6 s12 m7" id="col4">
+          <div class="card">
+            <div class="card-image">
+              <img src="./public/transparents/sae-removebg.png">
+            </div>
+            <div class="card-title">
+              SAE AeroConnect Challenge 2025
+            </div>
+            <div class="card-content">
+              <p>The team also aims to participate in the SAE AeroConnect Challenge, a student engineering design
+                competition in the SAE Emerging Technology Series, which provides an opportunity for students to think
+                critically about current and future emerging technologies in the mobility engineering industry. Each
+                program within the SAE Emerging Technology Series challenges universities to create a team of
+                multi-disciplinary engineers to collaborate, design, present, and defend conceptual designs to industry
+                professionals.</p>
+            </div>
+          </div>
+        </div>
+      </a>
+      
+        <a href="https://uasconferences.com/2024_icuas/">
+        <div class="col l6 s12 m7" id="col5">
+          <div class="card">
+            <div class="card-image">
+              <img src="./public/icuas_logo.png">
+            </div>
+            <div class="card-title">
+              ICUAS 2024
+            </div>
+            <div class="card-content">
+              <p>The team will continue to participate in the latest edition of AUVSI SUAS, having first done so in
+                2009. The competition, held annually in Maryland, USA, includes development of an aerial system with
+                imaging, target identification and payload drop capabilities.</p>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      </div>
     </div>
 
-    <div class="row" id="row2">  
-            <div class="col l6 s12 m7" id="col4">
-            <div class="card">
-                <div class="card-image">
-                <img src="./public/transparents/sae-removebg.png">
-                </div>
-                <div class="card-title">
-                    SAE AeroConnect Challenge 2021
-                </div>
-                <div class="card-content">
-                <p>The team also aims to participate in the SAE AeroConnect Challenge, a student engineering design competition in the SAE Emerging Technology Series, which provides an opportunity for students to think critically about current and future emerging technologies in the mobility engineering industry. Each program within the SAE Emerging Technology Series challenges universities to create a team of multi-disciplinary engineers to collaborate, design, present, and defend conceptual designs to industry professionals.</p>
-                </div>
+    <script>
+      document.title = "Upcoming Events • UAS-DTU";
+    </script>
+
+    <section id="footer">
+      <style>
+        .logos a>i {
+          padding-right: 0.4rem;
+        }
+
+        #contact .col {
+          padding-right: 2rem;
+          color: #cccccc;
+        }
+
+        #contact .map {
+          text-align: left;
+        }
+
+        #contact .row {
+          margin-bottom: 0;
+        }
+
+        .logos a {
+          color: grey
+        }
+
+        @media only screen and (min-width:800px) {
+          .row #g_map {
+            padding-left: 3vw;
+            padding-right: 3vw;
+          }
+        }
+      </style>
+      <div id="contact" style="padding: 0 4rem 0 4rem; background:black; position: relative;">
+        <div class="row">
+          <div class="col l3 m12 s12">
+            <h4 style="white-space: nowrap;">UAS-DTU</h4>
+            <p class="text">A team of enthusiastic undergraduates, working to providing the solutions for urban
+              surveillance needs. </p>
+            <div class="logos">
+              <a href="https://www.facebook.com/uas.dtu/" target="blank"><i
+                  class="fab fa-facebook-square fa-2x"></i></a>
+              <a href="https://in.linkedin.com/company/uas-dtu" target="blank"><i
+                  class="fab fa-linkedin fa-2x"></i></i></a>
+              <a href="https://www.youtube.com/channel/UCmOV4uiBHoHzf5ZrE1z6WQg" target="blank"><i
+                  class="fab fa-youtube fa-2x"></i></a>
+              <a href="https://www.instagram.com/uasdtu/" target="blank"><i class="fab fa-instagram fa-2x"></i></i></a>
             </div>
+          </div>
+
+          <div class="col l6 m12 s12" id="g_map">
+            <h4 class="map">Map help:</h4>
+            <div style="overflow: hidden;">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3498.027403024808!2d77.11499645105123!3d28.748598782285452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d01270184b37d%3A0x31d84edc5468f356!2sUAS+DTU!5e0!3m2!1sen!2sin!4v1516991611933"
+                frameborder="0" style="border:0; width:35rem;height:10.5rem;"></iframe>
             </div>
 
-            <div class="col l6 s12 m7" id="col5">
-            <div class="card">
-                <div class="card-image">
-                <img src="./public/transparents/suas-removebg.png">
-                </div>
-                <div class="card-title">
-                    AUVSI SUAS 2021
-                </div>
-                <div class="card-content">
-                <p>The team will continue to participate in the latest edition of AUVSI SUAS, having first done so in 2009. The competition, held annually in Maryland, USA, includes development of an aerial system with imaging, target identification and payload drop capabilities.</p>
-                </div>
-            </div>
-            </div>
+          </div>
+
+          <div class="col l3 m12 s12">
+            <h4>Reach us at:</h4>
+            <p id="phone1"><i class="fas fa-phone-alt"></i> +91-9667218034</p>
+            <p><i class="fas fa-phone-alt"></i> +91-9990777143</p>
+            <p><i class="fas fa-envelope"></i> uasdtu@dtu.ac.in</p>
+            <p><i class="fas fa-envelope"></i> uas.dce@gmail.com</p>
+          </div>
+        </div>
+      </div>
 
   </div>
-</div>
-
-<script>
-    document.title = "Upcoming Events • UAS-DTU";
-</script>
-
-<section id="footer">
-<style>
-    .logos a>i{
-        padding-right: 0.4rem;
-    }
-    #contact .col{
-        padding-right: 2rem;
-        color:#cccccc;
-    }
-    #contact .map{
-        text-align: left;
-    }
-
-    #contact .row{
-        margin-bottom: 0;
-    }
-    .logos a{
-         color:grey
-    }
-
-     @media only screen and (min-width:800px){
-        .row #g_map{
-        padding-left: 3vw; 
-        padding-right: 3vw;
-   }
-     }    
-</style>
-<div id="contact" style="padding: 0 4rem 0 4rem; background:black; position: relative;">
-    <div class="row">
-                <div class="col l3 m12 s12">
-                    <h4 style="white-space: nowrap;">UAS-DTU</h4>
-                    <p class="text">A team of enthusiastic undergraduates, working to providing the solutions for urban surveillance needs. </p>
-                        <div class="logos">
-                            <a href="https://www.facebook.com/uas.dtu/" target="blank"><i class="fab fa-facebook-square fa-2x"></i></a>
-                            <a href="https://in.linkedin.com/company/uas-dtu" target="blank"><i class="fab fa-linkedin fa-2x"></i></i></a>
-                            <a href="https://www.youtube.com/channel/UCmOV4uiBHoHzf5ZrE1z6WQg" target="blank"><i class="fab fa-youtube fa-2x"></i></a>
-                            <a href="https://www.instagram.com/uasdtu/" target="blank"><i class="fab fa-instagram fa-2x"></i></i></a>
-                        </div>
-                </div>
-               
-                <div class="col l6 m12 s12" id="g_map">
-                    <h4 class="map">Map help:</h4>
-                    <div style="overflow: hidden;">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3498.027403024808!2d77.11499645105123!3d28.748598782285452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d01270184b37d%3A0x31d84edc5468f356!2sUAS+DTU!5e0!3m2!1sen!2sin!4v1516991611933" frameborder="0" style="border:0; width:35rem;height:10.5rem;" ></iframe>
-                    </div>
-                        
-                </div>
-                 
-                <div class="col l3 m12 s12">
-                    <h4>Reach us at:</h4>
-                    <p id="phone1"><i class="fas fa-phone-alt"></i> +91-9667218034</p>
-                    <p><i class="fas fa-phone-alt"></i> +91-9990777143</p>
-                    <p><i class="fas fa-phone-alt"></i> +91-90056 12479</p>
-                    <p><i class="fas fa-envelope"></i> uas.dce@gmail.com</p>
-                </div>
-            </div>
-        </div>
-        
-    </div>
-    </section>    
-</div>
+  </section>
+  </div>
 </body>
+
 </html>
